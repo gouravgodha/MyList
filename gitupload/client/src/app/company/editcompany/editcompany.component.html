@@ -1,0 +1,157 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Update Company</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="companyTypeEditForm" method="post" (ngSubmit)="EditCompanyType()">
+            <div class="row">
+             
+              <div class="col-md-6 px-1">
+                <div class="form-group">
+                  <label>Business Type</label>
+                 
+                  <select formControlName="bussiness_type_id" name="bussiness_type_id" class="form-control">
+                    <option value="">Select Business Type</option>
+                    <option *ngFor="let bdata of businessTypesList" [disabled]="bdata.business_status=='Inactive'" value="{{bdata.business_type_id}}"> {{bdata.business_type}}</option>
+                  </select>
+                     <div *ngIf="companyTypeEditForm.controls['bussiness_type_id'].touched && !companyTypeEditForm.controls['bussiness_type_id'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['bussiness_type_id'].hasError('required')">  Please Select Business Type</small></div>
+
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" id="email" placeholder="Enter Email" name="email" formControlName="email">
+                   <div *ngIf="companyTypeEditForm.controls['email'].touched && !companyTypeEditForm.controls['email'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['email'].hasError('required')">  Please Enter Eamil</small></div>
+                
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Company Name</label>
+                  <input type="text" class="form-control" id="	company_name" placeholder="Enter Company Name" name="company_name" formControlName="company_name">
+                    <div *ngIf="companyTypeEditForm.controls['company_name'].touched && !companyTypeEditForm.controls['company_name'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['company_name'].hasError('required')">  Please Enter Company Name</small></div>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Company Address</label>
+                  <input type="text" class="form-control" id="company_address" placeholder="Enter Company Address" name="company_address" formControlName="company_address">
+                    <div *ngIf="companyTypeEditForm.controls['company_address'].touched && !companyTypeEditForm.controls['company_address'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['company_address'].hasError('required')">  Please Enter Company Address</small></div>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+              	<div class="form-group">
+              		<label>City</label>
+
+              		<input type="text" class="form-control" id="city" placeholder="Enter City" name="city" formControlName="city">
+                      <div *ngIf="companyTypeEditForm.controls['city'].touched && !companyTypeEditForm.controls['city'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['city'].hasError('required')">  Please Enter City</small></div>
+
+              	</div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+              	<div class="form-group">
+              		<label>State</label>
+
+              		<input type="text" class="form-control" id="state" placeholder="Enter State" name="state" formControlName="state">
+                   <div *ngIf="companyTypeEditForm.controls['state'].touched && !companyTypeEditForm.controls['state'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['state'].hasError('required')">  Please Enter State</small></div>
+
+              	</div>
+              </div>
+
+             <!--  <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Company Logo</label>
+
+                  <input type="file" class="form-control" id="company_logo" placeholder="Enter User Name" (change)="OnFileChange($event)" name="file" formControlName="company_logo">
+               <div *ngIf="companyTypeEditForm.controls['company_logo'].touched && !companyTypeEditForm.controls['company_logo'].valid" class="has-danger">
+                  <small _ngcontent-c3="" class="form-control-feedback">Profile Picture is required. </small>
+                </div>
+                </div>
+              </div> -->
+
+               <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="text" class="form-control" id="	phone_number" placeholder="Enter Phone Number" name="phone_number" formControlName="phone_number">
+                     <div *ngIf="companyTypeEditForm.controls['phone_number'].touched && !companyTypeEditForm.controls['phone_number'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['phone_number'].hasError('required')">  Please Enter Phone Number</small></div>
+                </div>
+              </div>
+
+               <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" name="first_name" formControlName="first_name">
+                    <div *ngIf="companyTypeEditForm.controls['first_name'].touched && !companyTypeEditForm.controls['first_name'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['first_name'].hasError('required')">  Please Enter First Name</small></div>
+                </div>
+              </div>
+
+               <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name" name="last_name" formControlName="last_name">
+                    <div *ngIf="companyTypeEditForm.controls['last_name'].touched && !companyTypeEditForm.controls['last_name'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['last_name'].hasError('required')">  Please Enter Last Name</small></div>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Status</label>
+                  <select   class="form-control" name="status" formControlName="status">
+                    <option value="">Select Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                  <div *ngIf="companyTypeEditForm.controls['status'].touched && !companyTypeEditForm.controls['status'].valid" class="has-error">
+                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['status'].hasError('required')">  Please Select Status</small></div>
+                  </div>
+
+                </div>
+
+
+                 <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Listed</label>
+                   <select   class="form-control" name="Listed" formControlName="Listed">
+                  <option value="">Select Option</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                 </select>
+                 <div *ngIf="companyTypeEditForm.controls['Listed'].touched && !companyTypeEditForm.controls['Listed'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="companyTypeEditForm.controls['Listed'].hasError('required')">  Please Select Status</small></div>
+                </div>
+              
+            </div>
+
+
+</div>
+            <div class="row">
+           <button class="btn btn-sm btn-info" type="button"  [disabled]="companyTypeEditForm.invalid" (click)="EditCompanyType()">Update</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>

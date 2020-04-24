@@ -1,0 +1,63 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content businessType">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Business Type List</h4>
+        </div>
+
+        <div class="card-header">
+          <button class="btn btn-sm btn-info" type="button" [routerLink]="['/businesstype/add']">Add New Record</button> 
+        </div>
+
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Id
+                </th>
+                <th>
+                  Business Type
+                </th>
+                <th>
+                 Status
+                </th>
+                <th>
+                  Created Date
+                </th>
+                <th class="text-right">
+                 Action
+                </th>
+              </thead>
+              <tbody *ngFor="let data of businessTypesList">
+                <tr>
+                  <td>
+                   {{data.business_type_id}}
+                  </td>
+                  <td>
+                    {{data.business_type}}
+                  </td>
+                  <td>
+                    {{data.business_status}}
+                  </td>
+                  <td>
+                    {{data.created_date | date:'dd/MM/yyyy'}}
+                  </td>
+                  <td class="text-right">
+                  <button class="btn btn-sm btn-info" type="button" [routerLink]="['/businesstype/edit/'+data.business_type_id]" >Edit</button>  &nbsp;&nbsp; 
+                  <button class="btn btn-sm btn-info" type="button" (click)="DeleteBusinessType(data.business_type_id)">Delete</button>                  
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>

@@ -1,0 +1,156 @@
+ <!-- Loader -->
+ <app-header></app-header>
+      
+      <div id="content">
+         <div class="menu-trigger"><img src="../../../assets/img/web/menuicon.png" class="img-responsive"></div>
+         <!-- Start Home -->
+         <section class="bg-home" style="background: url('../../../assets/img/web/bg-home.jpg') center center;">
+            <div class="bg-overlay"></div>
+            <div class="home-center">
+               <div class="home-desc-center">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                           <div class="row">
+                              <div class="col-lg-6">
+                                 <div class="top-banner-ad">
+                                    <h3>Placement Guaranteed</h3>
+                                    <p>$0 Upfront fee . Only pay when you hired </p>
+                                    <a [routerLink]="['/mylist/employers']" class="btn btn-primary">Employers</a>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="top-banner-ad">
+                                    <h3>Never miss a job</h3>
+                                    <p>Sign up for Job alerts </p>
+                                    <a [routerLink]="['/mylist/employee']" class="btn btn-primary">Register your vacancy</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- end home -->
+         <!-- Client start -->
+         <section class="section featured-company">
+            <div class="container">
+               <div class="featured-company_list">
+                  <div class="row justify-content-center">
+                     <div class="col-12">
+                        <div class="section-title text-center pb-2">
+                           <h4 class="title title-line pb-6">Featured Companies</h4>
+                        </div>
+                     </div>
+                  </div>
+                  
+                        <div id="owl-testi" class="featuredXs owl-carousel documentation owl-theme" > 
+                           
+                           <div class="item testi-box  mr-3 ml-2 mb-4 bg-light position-relative" *ngFor="let data of companylist">
+                              <!-- <div class="col-lg-2 col-md-4 col-6 pt-2 text-center"> -->
+                              <div class="">
+                                 <a [routerLink]="['/mylist/companyjob/'+data.company_id]">
+                                    <div class="company-count">{{data.open_positions}} job live</div>
+                                 </a>
+                                 <img  width="" height="" [src]="'http://localhost:8217/uploads/'+data.company_logo" class="img-responsive">                               
+                              </div>                              
+                           </div>
+
+                        </div>
+
+
+                        <!-- <button class="button-toggle" (click)="slidePrev()">Slide Prev</button>
+                        <carousel-component #topCarousel>
+                          <div class="item-carousel" *ngFor="let data of companylist">
+                            <img  [src]="'http://localhost:8217/uploads/'+data.company_logo" class="img-responsive">
+                         </div>
+                      </carousel-component>
+                    <button class="button-toggle" (click)="slideNext()">Slide Next</button> -->
+               </div>
+            </div>
+         </section>
+
+
+
+
+
+
+
+         <!-- Client end -->
+         <section class="addbaner">
+            <div class="container">
+               <img src="../../../assets/img/web/addbaner.jpg" class="img-responsive">
+            </div>
+         </section>
+         <section class="services section">
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-12">
+                     <div class="section-title text-left pb-2">
+                        <h3 class="title">Let the top employers of your industry reach you</h3>
+                        <h4>Research and Reports</h4>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="row serviceList">
+
+                  <div class="col-md-6" *ngFor="let data of jobboard_section">
+                     <div class="serviceList-items bg1">
+                        <div class="_box">
+                           <h3>{{data.title}}</h3>
+                           <p>{{data.description}}
+                           </p>
+                           <a href="#" class="btn btn-primary">{{data.button_name}}</a>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- <div class="col-md-6">
+                     <div class="serviceList-items bg2">
+                        <div class="_box">
+                           <h3>Salary Guide</h3>
+                           <p>Find out what should be happening 
+                              in your pay packet.
+                           </p>
+                           <a href="#" class="btn btn-primary">Check you salary</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="serviceList-items bg3">
+                        <div class="_box">
+                           <h3>Salary Guide</h3>
+                           <p>Find out what should be happening 
+                              in your pay packet.
+                           </p>
+                           <a href="#" class="btn btn-primary">Check you salary</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="serviceList-items bg4">
+                        <div class="_box">
+                           <h3>Salary Guide</h3>
+                           <p>Find out what should be happening 
+                              in your pay packet.
+                           </p>
+                           <a href="#" class="btn btn-primary">Check you salary</a>
+                        </div>
+                     </div>
+                  </div> -->
+                  
+               </div>
+            </div>
+         </section>
+        <app-footer-web></app-footer-web>
+      </div>
+      <!-- Back to top -->
+      <a href="#" class="back-to-top rounded text-center" id="back-to-top"> 
+      <i class="mdi mdi-chevron-up d-block"> </i> 
+      </a>
+      <!-- Back to top -->
+     
+     

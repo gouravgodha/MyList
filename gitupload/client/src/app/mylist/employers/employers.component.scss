@@ -1,0 +1,118 @@
+
+/** Employer **/
+.employersBttn ul
+{
+  float: right;
+  list-style-type: none;
+  margin-top: 15px;
+}
+.employersBttn ul li
+{
+  display: inline-block;
+}
+.employersBttn ul li.searchBttn a
+{
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.employersBttn ul li.employerLogin a
+{
+  background-color: #fff;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.innerHeader{
+  background-color: #2f55d4 !important;
+  position: relative !important;
+}
+.innerHeader .logo{
+  line-height: 50px;
+}
+
+.InnerContent div.menu-trigger{
+  top: 7px !important;
+}
+.placementContent
+{
+  position: absolute;
+  top: 50%;
+  z-index: 99;
+  transform: translateY(-50%);
+  color:
+  #fff;
+}
+.placementContent ul li:before{
+content: '';
+
+position: absolute;
+
+/*background-image: url("../images/arrowBg.png");*/
+
+left: -38px;
+
+top: 67%;
+
+transform: translateY(-50%);
+
+height: 20px;
+
+width: 20px;
+
+background-size: 11px;
+
+background-repeat: no-repeat;}
+
+.placementContent ul li{
+  position: relative;
+  line-height: 25px;
+  list-style-type: none;
+}
+._sliderBg:after{
+  content: '';
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+._sliderBg{
+  position: relative;
+}
+.placementContent h4{margin-bottom: 0;}
+.placementContent a{margin-left: 40px;}
+.serviceBox_item{
+  text-align: center;
+  background-color: #f1f3f9;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 350px;
+}
+.serviceBox{
+  padding: 50px 0px;
+}
+.serviceBox_item h4{
+  font-size: 18px;
+  margin-bottom: 80px;
+  font-weight: bold;
+}
+.serviceBox_item img{
+  max-width: 50px;
+  margin-bottom: 30px;
+}
+.innerFooter
+{padding: 15px 0px;padding-bottom: 0;}
+.innerFooter .social-icon {float: right;}

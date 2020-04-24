@@ -1,0 +1,52 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> List</h4>
+                    <!-- {{users|json}} -->
+                </div>
+
+                <div class="card-header">
+                    <button class="btn btn-sm btn-info" type="button" [routerLink]="['/job-board/add']">Add New Record</button> 
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>ID </th>
+                                <th>Title</th>
+                               <!--  <th>Description </th> -->
+                                <th>Image </th>
+                                <th>Button Name </th>
+                                <th>Status</th>
+                                <th>Created Date</th>                                
+                                <th class="text-right"> Action </th>
+                            </thead>
+                            <tbody *ngFor="let jobboardsection of jobboardList">
+                                <tr>
+                                    <td> {{jobboardsection.id}} </td>
+                                    <td> {{jobboardsection.title}} </td>
+                                   <!--  <td> {{jobboardsection.description}} </td> -->
+                                    <td><img src="http://localhost:8217/jobsection/{{jobboardsection.image}}" width="150px"></td>
+                                    <td> {{jobboardsection.button_name}} </td>
+                                    <td> {{jobboardsection.status}} </td>
+                                    <td> {{jobboardsection.created_date}} </td>
+                                                                        
+                                    <td class="text-right">
+                                        <button class="btn btn-sm btn-info" type="button" [routerLink]="['/job-board/edit/'+jobboardsection.id]">Edit</button>  &nbsp;&nbsp; 
+                                       
+                                        <button class="btn btn-sm btn-info" type="button" (click)="deleteJobBoardSection(jobboardsection.id)">Delete</button>                  
+                                    </td>
+                                </tr>                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

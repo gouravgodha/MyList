@@ -1,0 +1,76 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <!-- <div class="card-header">
+                    <h4 class="card-title">Job Apply List</h4>
+                   
+                </div> -->
+
+                <!-- <div class="card-header">
+                    <button class="btn btn-sm btn-info" type="button" [routerLink]="['/jobregister/add']">Add New Job</button> 
+                </div> -->
+
+                 <div class="row admin-head-title">
+                  <div class="card-header">
+                    <p style="font-weight: bold;">Total Record: {{jobList.length}}</p>
+                  </div>
+
+                  <div class="card-header col-md-4">
+                    <!-- <label>Filter By(Job Title):</label> -->
+                    <select (change)="FilterByJobApply($event.target.value)">
+                     <option>Filter By(Job Title):</option>
+                     <option  value="{{applyjob.id}}"  *ngFor="let applyjob of joblistdata">{{applyjob.job_title}}</option>
+                   </select>
+                 </div>
+
+                  <!-- <div class="card-header col-md-2">
+                    <button class="btn btn-sm btn-info" type="button" [routerLink]="['/jobregister/add']">Add New Job</button> 
+                  </div> -->
+                </div>
+
+
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table _xss jobapplytable">
+                            <thead class=" text-primary">
+                              <th> Name</th>
+                              <th>Job applied to...  </th>
+                              <th> Date</th> 
+                              <th class="text-center">Shortlist</th>
+                              <th class="text-center">Delete</th>
+                              <th class="text-center">Download</th>
+                            </thead>
+
+                            <tbody *ngFor="let applyjob of jobList; let idx = index;">
+
+                                <tr>
+                                    <td><a [routerLink]="['/job-apply/detail/'+applyjob.id]"> {{applyjob.employer.emp_firstname}} {{applyjob.employer.emp_lastname}} </a></td>
+                                    <td> {{applyjob.job_register.job_title}} </td>
+                                    <td> {{applyjob.created_date}} </td>
+                                    <td class="{{applyjob.shortlist}}">
+                                   
+                                    <div><a style="cursor: pointer;"><img src="./assets/img/verified.png" style="width: 25px;"/></a></div>
+                                     </td>
+                                    <td>
+                                    <!--  <button  class="btn btn-sm btn-info" type="button" [routerLink]="['/job-apply/detail/'+applyjob.id]">Detail</button> -->
+                                      <a (click)="deleteJob(applyjob.id)" style="cursor: pointer;"><img style="width: 25px;" src="./assets/img/close.png"/></a>  
+                                 </td>
+                                    <td> 
+                                        <div class="_downloadPolicy">
+                                          <a class="_bttnHover" (click)="downloadp(applyjob.employer.employee_history.emp_resume)" style="cursor: pointer;"><img src="./assets/img/download.png" style="width: 25px;"/></a>
+                                      </div>
+                                  </td>
+                                </tr>                              
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

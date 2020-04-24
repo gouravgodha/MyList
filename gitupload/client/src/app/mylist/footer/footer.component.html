@@ -1,0 +1,185 @@
+ <!-- footer start -->
+         <footer class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-3 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                     <a href="javascript:void(0)"><img src="images/logo-light.png" height="20" alt=""></a>
+                     <p class="mt-4">At vero eos et accusamus et iusto odio dignissim os ducimus qui blanditiis praesentium</p>
+                     <ul class="social-icon social list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-google"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                     <p class="text-white mb-4 footer-list-title">Jobs in your area</p>
+                     <ul class="list-unstyled footer-list">
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Sydney</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Melbourne</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Adelaide</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Brisbane</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Canberra</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Hobart</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                     <p class="text-white mb-4 footer-list-title">Popular searches</p>
+                     <ul class="list-unstyled footer-list">
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Accountancy jobs</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Call centre jobs</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Construction jobs</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Digital jobs </a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Mining jobs</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Office jobs</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                     <p class="text-white mb-4 footer-list-title">Careers Resources</p>
+                     <ul class="list-unstyled footer-list">
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Hays Salary Guide</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> CV template</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Job growth hotspots</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Upskilling advice </a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> How to write a cover letter</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Send us your CV</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- footer end -->
+         <hr>
+         <footer class="footer footer-bar">
+            <div class="container text-center">
+               <div class="row justify-content-center">
+                  <div class="col-12">
+                     <div class="">
+                        <p class="mb-0">© 2019 All Right Reserved. MyjobList</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--end container-->
+         </footer>
+         <!--end footer-->
+         <!-- Footer End -->
+         <div class="modal-container">
+            <input id="modal-toggle" type="checkbox">
+            <label class="modal-backdrop" for="modal-toggle"></label>
+            <div class="modal-content">
+               <label class="modal-close" for="modal-toggle">&#x2715;</label>
+               <div class="custom-form rounded  p-4">
+                  <div id="message"></div>
+                  
+                  <form [formGroup]="RegisteredEmployeform">
+                     <h3>Employee Registration From</h3>
+                     <div class="row">
+
+                        <div class="col-lg-6">
+                           <div class="form-group app-label">
+                              <label class="text-muted">First Name</label>
+                              <input name="name" id="name2" type="text"  formControlName="emp_firstname" class="form-control resume" placeholder="Enter First Name..">
+                              <div *ngIf="RegisteredEmployeform.controls['emp_firstname'].touched && !RegisteredEmployeform.controls['emp_firstname'].valid" class="has-error">
+                               <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredEmployeform.controls['emp_firstname'].hasError('required')">  Please Enter First Name</small></div>
+                           </div>
+                        </div>
+
+
+                         <div class="col-lg-6">
+                           <div class="form-group app-label">
+                              <label class="text-muted">Last Name</label>
+                              <input name="name" id="name2" type="text"  formControlName="emp_lastname" class="form-control resume" placeholder="Enter Last Name..">
+                              <div *ngIf="RegisteredEmployeform.controls['emp_lastname'].touched && !RegisteredEmployeform.controls['emp_lastname'].valid" class="has-error">
+                               <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredEmployeform.controls['emp_lastname'].hasError('required')">  Please Enter Last Name</small></div>
+                           </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                           <div class="form-group app-label">
+                              <label class="text-muted">Email address</label>
+                              <input name="email" formControlName="emp_email" id="email1" type="email" class="form-control resume" placeholder="Enter Email.." >
+                              <div *ngIf="RegisteredEmployeform.controls['emp_email'].touched && !RegisteredEmployeform.controls['emp_email'].valid" class="has-error">
+                               <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredEmployeform.controls['emp_email'].hasError('required')">  Please Enter Email Address</small></div>
+                           </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                           <div class="form-group app-label">
+                              <label class="text-muted">Password</label>
+                              <input type="text"  formControlName="emp_pass"  class="form-control resume" id="subject" placeholder="Please Enter Password">
+                              <div *ngIf="RegisteredEmployeform.controls['emp_pass'].touched && !RegisteredEmployeform.controls['emp_pass'].valid" class="has-error">
+                               <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredEmployeform.controls['emp_pass'].hasError('required')">  Please Enter Password</small></div>
+                           </div>
+                        </div>
+
+
+                       
+                     </div>
+                     <div class="row">
+                        <div class="col-sm-12">
+                           <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Register" [disabled]="RegisteredEmployeform.invalid" (click)="AddRegisterJob()">
+                           <div id="simple-msg"></div>
+                        </div>
+                     </div>
+                  </form>
+
+               </div>
+            </div>
+         </div>
+        
+
+   <!--- login model -->
+
+    <div class="modal-container">
+            <input id="modal-toggle-login" type="checkbox">
+            <label class="modal-backdrop" for="modal-toggle-login"></label>
+            <div class="modal-content">
+               <label class="modal-close" for="modal-toggle-login">&#x2715;</label>
+               <div class="custom-form rounded  p-4">
+                  <div id="message"></div>
+                  
+                  <form class="form-horizontal form-material" [formGroup]="LoginForm" (ngSubmit)="LoginAuth(LoginForm)">
+        <h3 class="box-title m-b-20">Sign In</h3>
+        <div class="alert alert-danger" *ngIf="ErrorMsg==true"><i class="fa fa-times"></i> Invalid Username or password!</div> 
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input class="form-control" type="text" required="" placeholder="Email" formControlName="emp_email"> 
+            <div *ngIf="LoginForm.controls['emp_email'].touched && !LoginForm.controls['emp_email'].valid" class="has-danger">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="LoginForm.controls['emp_email'].hasError('required')">  Please Enter Email Address. </small>
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="LoginForm.controls['emp_email'].hasError('email') && !LoginForm.controls['emp_email'].hasError('required') "> Invalid Email </small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input class="form-control" type="emp_pass" required="" placeholder="Password" formControlName="emp_pass">
+            <div *ngIf="LoginForm.controls['emp_pass'].touched && !LoginForm.controls['emp_pass'].valid" class="has-danger">
+              <small _ngcontent-c3="" class="form-control-feedback"> Please Enter Password</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12 font-14">
+            <div class="checkbox checkbox-primary pull-left p-t-0">
+              <!-- <input id="checkbox-signup" type="checkbox"> -->
+              <!-- <label for="checkbox-signup"> Remember me </label> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+          <div class="col-xs-12">
+            <button class="btn btn-primary btn-round btn-lg btn-block" [disabled]="!LoginForm.valid">SIGN IN</button>
+          </div>
+          <!-- <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right">Forgot password?</a> -->
+        </div>
+        
+      </form>
+
+               </div>
+            </div>
+         </div>
+
+   <!--- login model end -->

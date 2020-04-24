@@ -1,0 +1,66 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Form Type List</h4>
+          <!-- {{users|json}} -->
+        </div>
+
+        <div class="card-header">
+          <button class="btn btn-sm btn-info" type="button" [routerLink]="['/formtype/add']">Add New Record</button> 
+        </div>
+
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>Id</th>
+                <th>Company Name</th>
+                <th>Policy/Form Title</th>
+                <th>Statement</th>
+                <th>Video Duration</th>
+                <th>Status</th>
+                <!-- <th>User Name</th> -->
+                <th>Created Date</th>                
+                <th class="text-right">
+                 Action
+                </th>
+              </thead>
+              <tbody *ngFor="let data of formTypesList">
+                <tr>
+                  <td>          {{data.form_id}}
+                  </td>
+                  <td>{{data.company_master.company_name}}
+                  </td>
+                  <td>{{data.form_title}}
+                  </td>
+                  <td>{{data.form_statement}}
+                  </td>
+                  <td>{{data.form_video_duration}}
+                  </td>
+                  <td>{{data.form_status}}
+                  </td>
+                  <!-- <td>
+                    {{data.form_user_id}}
+                  </td> -->
+                  <td>
+                    {{data.created_date | date:'dd/MM/yyyy'}}
+                  </td>
+                  <td class="text-right _bttn">
+                  <button class="btn btn-sm btn-info" type="button" [routerLink]="['/formtype/edit/'+data.form_id]" >Edit</button>  &nbsp;&nbsp; 
+                  <button class="btn btn-sm btn-info" type="button" (click)="DeleteFormType(data.form_id)">Delete</button>                  
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>

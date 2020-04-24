@@ -1,0 +1,111 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Company List</h4>
+        </div>
+
+        <div class="card-header">
+          <button class="btn btn-sm btn-info" type="button" [routerLink]="['/company/add']">Add New Company</button> 
+        </div>
+
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Id
+                </th>
+                <th>
+                 Business Type
+                </th>
+                <th>
+                 Email
+                </th>
+                <th>
+                 Company Name
+                </th>
+                <th>
+                 Company Address
+                </th>
+                <th>
+                City
+                </th>
+                <th>
+                 State
+                </th>
+                <th>
+                Phone Number
+                </th>   
+                <th>
+                First Name
+                </th>
+                <th>
+                Last Name
+                </th>
+                <th>
+                Status
+                </th>     
+                <th>
+                Created Date
+                </th>          
+                <th class="text-right">
+                 Action
+                </th>
+              </thead>
+              <tbody *ngFor="let data of companyTypesList">
+                <tr>
+                  <td>
+                   {{data.company_master.company_id}}
+                  </td>
+                  <td>
+                   {{data.business_type}}
+                  </td>
+                  <td>
+                   {{data.company_master.email}}
+                  </td>
+                  <td>
+                   {{data.company_master.company_name}}
+                  </td>
+                  <td>
+                    {{data.company_master.company_address}}
+                  </td>
+                  <td>
+                    {{data.company_master.city}}
+                  </td>
+                  <td>
+                    {{data.company_master.state}}
+                  </td>
+                  <td>
+                    {{data.company_master.phone_number}}
+                  </td>
+                  <td>
+                    {{data.company_master.first_name}}
+                  </td>
+                  <td>
+                    {{data.company_master.last_name}}
+                  </td>
+                  <td>
+                    {{data.company_master.status}}
+                  </td>
+                  <td>
+                    {{data.company_master.created_date | date:'dd/MM/yyyy'}}
+                  </td>
+                  <td class="text-right _bttn">
+                  <button class="btn btn-sm btn-info" type="button" [routerLink]="['/company/edit/'+data.company_master.company_id]" >Edit</button>  &nbsp;&nbsp; 
+                  <button class="btn btn-sm btn-info" type="button" (click)="DeleteCompanyType(data.company_master.company_id)">Delete</button>                  
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>

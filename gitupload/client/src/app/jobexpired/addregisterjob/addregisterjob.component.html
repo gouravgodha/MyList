@@ -1,0 +1,96 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Add Job</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="RegisteredJobList">
+                        <div class="row">
+
+          
+
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Job Title</label>
+                                    <input type="text" class="form-control" id="job_title" placeholder="Enter Job Title" name="job_title" formControlName="job_title">
+                                         <div *ngIf="RegisteredJobList.controls['job_title'].touched && !RegisteredJobList.controls['job_title'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls[' job_title'].hasError('required')">  Please Enter Job Title</small></div>
+                                </div>
+                            </div>
+
+
+                           
+
+                            <div class="col-md-6 pl-1">
+                              <div class="form-group">
+                                <label>Job Location</label>
+                                <input type="text" class="form-control" id="job_location" placeholder="Enter Email" name="job_location" formControlName="job_location">
+                                <div *ngIf="RegisteredJobList.controls['job_location'].touched && !RegisteredJobList.controls['job_location'].valid" class="has-error">
+                                  <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_location'].hasError('required')">  Please Enter Job Location</small></div>
+                                </div>
+                              </div>
+
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Job Skill</label>
+                                    <input type="text" class="form-control" id="job_skill" placeholder="Enter Job Skill" name="job_skill" formControlName="job_skill">
+                                         <div *ngIf="RegisteredJobList.controls['job_skill'].touched && !RegisteredJobList.controls['job_skill'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_skill'].hasError('required')">  Please Enter Job Skill</small></div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 px-1">
+                                <div class="form-group">
+                                    <label>Job Type</label>
+                                    <select formControlName="Job_type" name="Job_type" class="form-control">
+                                        <option value="">Select Job Type</option>
+                                         <option value="1">Part Time</option>
+                                          <option value="2">Full TIme</option>
+                                    </select>
+                                         <div *ngIf="RegisteredJobList.controls['Job_type'].touched && !RegisteredJobList.controls['Job_type'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['Job_type'].hasError('required')">  Please Select job Type</small></div>
+                                </div>
+                            </div>
+
+
+                             <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Job Description</label>
+                                      <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"  class="form-control" id="job_description" placeholder="Enter Job Description" name="job_description" formControlName="job_description"></ckeditor>
+
+                                   <!--  <textarea type="text" class="form-control" id="job_description" placeholder="Enter Job Description" name="job_description" formControlName="job_description"></textarea> -->
+                                         <div *ngIf="RegisteredJobList.controls['job_description'].touched && !RegisteredJobList.controls['job_description'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_description'].hasError('required')">  Please Enter Job Description</small></div>
+                                </div>
+                            </div>   
+
+                           
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Status</label>
+                  <select class="form-control" name="status" formControlName="status">
+                    <option value="">Select Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                  <div *ngIf="RegisteredJobList.controls['status'].touched && !RegisteredJobList.controls['status'].valid" class="has-error">
+                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['status'].hasError('required')">  Please Enter User Role</small></div>
+                  </div>
+                </div>
+                          
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-sm btn-info" type="button" [disabled]="RegisteredJobList.invalid" (click)="AddRegisterJob()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

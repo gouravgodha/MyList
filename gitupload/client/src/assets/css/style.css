@@ -1,0 +1,21 @@
+._bttn button
+{
+		width:100px;
+		margin-bottom:10px;
+		float:right;
+}
+.table-responsive{
+	overflow:auto;
+}
+.btn-info
+{
+	background-color:#1e4477 !important;
+}
+.panel-header
+{
+	background: transparent !important;
+}
+.text-right .btn-info
+{
+	width: 100px;
+}

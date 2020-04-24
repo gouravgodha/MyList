@@ -1,0 +1,644 @@
+ <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <div class="card mt-3 tab-card">
+                  <div class="card-header tab-card-header">
+                     <h3 class="createtitle">Create new job</h3>
+                     <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                        <li class="nav-item first">
+                           <a class="nav-link active show" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">Allocate Job</a>
+                        </li>
+                        <li class="nav-item two">
+                           <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">Description</a>
+                        </li>
+                        <li class="nav-item three">
+                           <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">Overview</a>
+                        </li>
+                     </ul>
+                  </div>
+
+                   <form [formGroup]="RegisteredJobList">
+                  <div class="tab-content" id="myTabContent">
+
+                     <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+
+                      <!---- select job package -->
+                        <div class="row">
+                           <div class="steps step1 col-md-12">
+                              <h4 class="steptitle">Step 1: Select Job Type</h4>
+                              <div class="row" style="padding: 0px 15px;">
+                                 <div class="col-md-4 pad0">
+                                    <div class="jobtypes jobtypes-free">
+                                       <div class="_title">
+                                          <h3>Free</h3>
+                                          <span>Job Ad</span>
+                                       </div>
+                                       <div class="pricing">
+                                          <h4>Free</h4>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pad0">
+                                    <div class="jobtypes jobtypes-bost">
+                                       <div class="_title">
+                                          <h3>Boost</h3>
+                                          <span>Job Ad</span>
+                                       </div>
+                                       <div class="pricing">
+                                          <h4>$50.00</h4>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pad0">
+                                    <div class="jobtypes jobtypes-multi">
+                                       <div class="_title">
+                                          <h3>Multi-Post</h3>
+                                          <span>Job Ad</span>
+                                       </div>
+                                       <div class="pricing">
+                                          <h4>$150.00</h4>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!--- job package end --->
+
+
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="steps step2">
+                                 <h4 class="steptitle">Step 2: Who are you looking for?</h4>
+                                 <br/>
+                                
+                                    <!-- <div class="form-group">
+                                       <input type="text" name="" placeholder="Job title">
+                                    </div> -->
+
+
+
+                                    <div class="form-group">
+                                      
+                                      <input ngModel maxlength="80" type="text" class="form-control" id="job_title" placeholder="Enter Job Title" name="job_title" formControlName="job_title">
+                                      <div *ngIf="RegisteredJobList.controls['job_title'].touched && !RegisteredJobList.controls['job_title'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls[' job_title'].hasError('required')">  Please Enter Job Title</small></div>
+                                    </div>
+                                    
+
+
+
+
+                                     <!---- salary type -->
+                                    <div class="form-group">                                  
+                                  <select formControlName="industry" name="industry" class="form-control">
+                                    <option value="">Select Industry</option>
+                                    <option value="1">Part Time</option>
+                                    <option value="2">Full TIme</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['industry'].touched && !RegisteredJobList.controls['industry'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['industry'].hasError('required')">  Please Select Industry</small></div>
+                                  </div>
+                                  <!--- end --->
+
+
+                                     <!---- salary type -->
+                                    <div class="form-group">                                  
+                                  <select formControlName="industry_subcategory" name="industry_subcategory" class="form-control">
+                                    <option value="">Select Sub Category</option>
+                                    <option value="1">Part Time</option>
+                                    <option value="2">Full TIme</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['industry_subcategory'].touched && !RegisteredJobList.controls['industry_subcategory'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['industry_subcategory'].hasError('required')">  Please Select Category</small></div>
+                                  </div>
+                                  <!--- end --->
+
+                                  <!--- job location -->
+                                  <div class="form-group">                                   
+                                    <input type="text" class="form-control" id="job_location" placeholder="Enter Email" name="job_location" formControlName="job_location">
+                                    <div *ngIf="RegisteredJobList.controls['job_location'].touched && !RegisteredJobList.controls['job_location'].valid" class="has-error">
+                                      <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_location'].hasError('required')">  Please Enter Job Location</small></div>
+                                    </div>
+
+                                    <!-- end -->
+                                
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="steps step3">
+
+                                 <h4 class="steptitle">Step 3: Select Job Type</h4>
+                                 <br/>
+                                    
+                                 <!----- job type ---->
+                                 <div class="form-group">                                  
+                                  <select formControlName="Job_type" name="Job_type" class="form-control">
+                                    <option value="">Select Job Type</option>
+                                    <option value="Part Time">Part Time</option>
+                                    <option value="Full TIme">Full TIme</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Casual">Casual</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['Job_type'].touched && !RegisteredJobList.controls['Job_type'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['Job_type'].hasError('required')">  Please Select job Type</small></div>
+                                  </div>
+                                  <!---- end --->
+
+
+                                  <!---- salary type -->
+                                    <div class="form-group">                                  
+                                  <select formControlName="salary_type" name="salary_type" class="form-control salary_type">
+                                    <option value="">Salary Type</option>
+                                    <option value="Annual Salary">Annual Salary</option>
+                                    <option value="Anual + Commission">Anual + Commission</option>
+                                    <option value="Commission">Commission</option>
+                                    <option value="Hourly Rate">Hourly Rate</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['salary_type'].touched && !RegisteredJobList.controls['salary_type'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['salary_type'].hasError('required')">  Please Select job Type</small></div>
+                                  </div>
+                                  <!--- end --->
+
+
+                                  <!----- salary range -->
+
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                     <label style="padding-top: 12px;">Salary Range : </label>
+                                   </div>
+
+
+                                   <!---- salary type -->
+                                   <div class="form-group col-md-4 salary_range_minimum">                                  
+                                    <select formControlName="salary_range_minimum" name="salary_range_minimum" class="form-control">
+                                      <option value="">Salary Minimum</option>
+                                      <option value="0">0</option>
+                                      <option value="100">100</option>
+                                      <option value="500">500</option>
+                                      <option value="1000">1000</option>
+                                      <option value="2000">2000</option>
+                                      <option value="5000">5000</option>
+                                      <option value="10000">10000</option>
+                                      <option value="20000">20000</option>
+                                      <option value="30000">30000</option>
+                                      <option value="40000">40000</option>
+                                      <option value="50000">50000</option>
+                                    </select>
+                                    <div *ngIf="RegisteredJobList.controls['salary_range_minimum'].touched && !RegisteredJobList.controls['salary_range_minimum'].valid" class="has-error">
+                                      <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['salary_range_minimum'].hasError('required')">  Please Select Minimum Salary </small></div>
+                                    </div>
+                                    <!--- end --->
+
+
+                                    <!---- salary type -->
+                                    <div class="form-group col-md-4 salary_range_maximum">                                  
+                                      <select formControlName="salary_range_maximum" name="Job_type" class="form-control">
+                                        <option value="">Salary Maximum</option>
+                                        <option value="0">0</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                        <option value="2000">2000</option>
+                                        <option value="5000">5000</option>
+                                        <option value="10000">10000</option>
+                                        <option value="20000">20000</option>
+                                        <option value="30000">30000</option>
+                                        <option value="40000">40000</option>
+                                        <option value="50000">50000</option>
+                                      </select>
+                                      <div *ngIf="RegisteredJobList.controls['Job_type'].touched && !RegisteredJobList.controls['Job_type'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['Job_type'].hasError('required')">  Please Select Maximum Salary</small></div>
+                                      </div>
+                                      <!--- end --->
+
+                                    </div>
+                                    
+                                    <!---- end salary range -->
+
+                                    <div class="form-group">
+                                       <div class="row">
+                                          <div class="col-md-3">
+                                             <label  style="padding-top: 8px;">Hide Salary : </label>
+                                          </div>
+                                          <div class="col-md-4">
+                                             <input type="checkbox" class="form-control" id="hide_salary"  name="hide_salary" formControlName="hide_salary">
+                                          </div>
+                                       </div>
+                                    </div>
+                                
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="steps step3">
+                                 <h4 class="steptitle">Step 4: Upload Company Logo ( Optional )</h4>
+                                 <div class="_upload">
+                                   
+                                       <div id='upload' class='text-center'>
+                                          <label for="fileupload" class="custom-file-upload">
+                                          <i class="fa fa-cloud-upload"></i> <img class="uploadicon" src="upload.png" style="max-width: 100%;">
+                                          </label>
+                                          <input type="file" id="fileupload" name="img" multiple>
+                                       </div>
+                                  
+                                   <!--  <center>
+                                       <div class='image'>
+                                       </div>
+                                    </center> -->
+                                 </div>
+                              </div>
+                           </div>
+
+                            <div class="col-md-6">
+                              <a  class="nextbttn" style="cursor: pointer;" (click)="Description()">Go to Description</a>
+                              <span class="require-field" style="color: red;display: none;">*** All Field is Required</span>
+                           </div>
+
+                        </div>
+                     </div>
+
+
+                     <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+                           <div class="row">
+                           <div class="col-md-8">
+                              <div class="steps step5">
+                                 <h4 class="steptitle">Step 5: Job Summary</h4>
+                                
+                                     <!--- Summary  -->
+                                    <div class="form-group">
+                                      <label>Job Summary</label>
+                                      <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"  class="form-control" id="job_summary" placeholder="Enter Job Summary" name="job_summary" formControlName="job_summary"></ckeditor>           
+                                      <div *ngIf="RegisteredJobList.controls['job_summary'].touched && !RegisteredJobList.controls['job_summary'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_summary'].hasError('required')">  Please Enter Job Summary</small></div>
+                                      </div>
+                                    <!--- end -->
+                                 
+                              </div>
+                           </div><br/>
+                           <div class="col-md-8">
+                              <div class="steps step6">
+                                 <h4 class="steptitle">Step 6: Job Description</h4>
+                                
+                                    <!--- description  -->
+                                    <div class="form-group">
+                                      <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"  class="form-control" id="job_description" placeholder="Enter Job Description" name="job_description" formControlName="job_description"></ckeditor>
+                                      <div *ngIf="RegisteredJobList.controls['job_description'].touched && !RegisteredJobList.controls['job_description'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_description'].hasError('required')">  Please Enter Job Description</small></div>
+                                      </div>
+                                    <!--- end -->
+
+                                     <div class="form-group">
+                                       <input type="checkbox" name=""> Role is applicable to recent graduate & entry level candidate
+                                    </div>
+                                 
+                              </div>
+                           </div>
+                            <div class="col-md-8">
+                              <div class="steps step7">
+                                 <h4 class="steptitle">Step 7: Where do you want your application to be sent?</h4>
+                               
+                                 <div class="form-group">
+                                  <input type="text" class="form-control" id="application_sent" placeholder="Enter Email Address" name="application_sent" formControlName="application_sent">
+                                  <div *ngIf="RegisteredJobList.controls['application_sent'].touched && !RegisteredJobList.controls['application_sent'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['application_sent'].hasError('required')">  Please Enter application to be sent</small></div>
+                                  </div>
+                                 
+                              </div>
+                           </div>
+                            <div class="col-md-6">
+                              <div class="steps step7">
+                                 <h4 class="steptitle">Step 8: Internal reference</h4>
+                                
+                                 <div class="form-group">
+                                  <input type="text" class="form-control" id="internal_refrence" placeholder="Internal refrence can help you keep track of your jobs." name="internal_refrence" formControlName="internal_refrence">
+                                  <div *ngIf="RegisteredJobList.controls['internal_refrence'].touched && !RegisteredJobList.controls['internal_refrence'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['internal_refrence'].hasError('required')">  Please Enter  Internal reference</small></div>
+                                  </div>
+
+
+                                 
+                              </div>
+                           </div>
+                           <div class="col-md-6">                              
+                               <button class="nextbttn Overviewbtn" type="button" (click)="GotoOverview()">Go to Overview</button>
+                                <span class="require-field" style="color: red;display: none;">*** All Field is Required</span>
+                           </div>
+                        </div>            
+                     </div>
+                     <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+
+                      <div class="tab-pane fade show active p-3" id="one">
+
+                      <!---- select job package -->
+                        <div class="row">
+                           <div class="steps step1 col-md-12">
+                              <h4 class="steptitle">Step 1: Select Job Type</h4>
+                              <div class="row" style="padding: 0px 15px;">
+                                 <div class="col-md-4 pad0">
+                                    <div class="jobtypes jobtypes-free">
+                                       <div class="_title">
+                                          <h3>Free</h3>
+                                          <span>Job Ad</span>
+                                       </div>
+                                       <div class="pricing">
+                                          <h4>Free</h4>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pad0">
+                                    <div class="jobtypes jobtypes-bost">
+                                       <div class="_title">
+                                          <h3>Boost</h3>
+                                          <span>Job Ad</span>
+                                       </div>
+                                       <div class="pricing">
+                                          <h4>$50.00</h4>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pad0">
+                                    <div class="jobtypes jobtypes-multi">
+                                       <div class="_title">
+                                          <h3>Multi-Post</h3>
+                                          <span>Job Ad</span>
+                                       </div>
+                                       <div class="pricing">
+                                          <h4>$150.00</h4>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!--- job package end --->
+
+
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="steps step2">
+                                 <h4 class="steptitle">Step 2: Who are you looking for?</h4>
+                                 <br/>
+                                
+                                    <!-- <div class="form-group">
+                                       <input type="text" name="" placeholder="Job title">
+                                    </div> -->
+
+
+
+                                    <div class="form-group">
+                                      
+                                      <input ngModel maxlength="80" type="text" class="form-control" id="job_title" placeholder="Enter Job Title" name="job_title" formControlName="job_title">
+                                      <div *ngIf="RegisteredJobList.controls['job_title'].touched && !RegisteredJobList.controls['job_title'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls[' job_title'].hasError('required')">  Please Enter Job Title</small></div>
+                                    </div>
+                                    
+
+
+
+
+                                     <!---- salary type -->
+                                    <div class="form-group">                                  
+                                  <select formControlName="industry" name="industry" class="form-control">
+                                    <option value="">Select Industry</option>
+                                    <option value="1">Part Time</option>
+                                    <option value="2">Full TIme</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['industry'].touched && !RegisteredJobList.controls['industry'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['industry'].hasError('required')">  Please Select Industry</small></div>
+                                  </div>
+                                  <!--- end --->
+
+
+                                     <!---- salary type -->
+                                    <div class="form-group">                                  
+                                  <select formControlName="industry_subcategory" name="industry_subcategory" class="form-control">
+                                    <option value="">Select Sub Category</option>
+                                    <option value="1">Part Time</option>
+                                    <option value="2">Full TIme</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['industry_subcategory'].touched && !RegisteredJobList.controls['industry_subcategory'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['industry_subcategory'].hasError('required')">  Please Select Category</small></div>
+                                  </div>
+                                  <!--- end --->
+
+                                  <!--- job location -->
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" id="job_location" placeholder="Enter Email" name="job_location" formControlName="job_location">
+                                    <div *ngIf="RegisteredJobList.controls['job_location'].touched && !RegisteredJobList.controls['job_location'].valid" class="has-error">
+                                      <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_location'].hasError('required')">  Please Enter Job Location</small></div>
+                                    </div>
+
+                                    <!-- end -->
+                                
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="steps step3">
+
+                                 <h4 class="steptitle">Step 3: Select Job Type</h4>
+                                 <br/>
+                                    
+                                 <!----- job type ---->
+                                 <div class="form-group">                                  
+                                  <select formControlName="Job_type" name="Job_type" class="form-control">
+                                    <option value="">Select Job Type</option>
+                                    <option value="Part Time">Part Time</option>
+                                    <option value="Full TIme">Full TIme</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Casual">Casual</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['Job_type'].touched && !RegisteredJobList.controls['Job_type'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['Job_type'].hasError('required')">  Please Select job Type</small></div>
+                                  </div>
+                                  <!---- end --->
+
+
+                                  <!---- salary type -->
+                                    <div class="form-group">                                  
+                                  <select formControlName="salary_type" name="salary_type" class="form-control salary_type">
+                                    <option value="">Salary Type</option>
+                                    <option value="Annual Salary">Annual Salary</option>
+                                    <option value="Anual + Commission">Anual + Commission</option>
+                                    <option value="Commission">Commission</option>
+                                    <option value="Hourly Rate">Hourly Rate</option>
+                                  </select>
+                                  <div *ngIf="RegisteredJobList.controls['salary_type'].touched && !RegisteredJobList.controls['salary_type'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['salary_type'].hasError('required')">  Please Select job Type</small></div>
+                                  </div>
+                                  <!--- end --->
+
+
+                                  <!----- salary range -->
+
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                     <label style="padding-top: 12px;">Salary Range : </label>
+                                   </div>
+
+
+                                   <!---- salary type -->
+                                   <div class="form-group col-md-4 salary_range_minimum">                                  
+                                    <select formControlName="salary_range_minimum" name="salary_range_minimum" class="form-control">
+                                      <option value="">Salary Minimum</option>
+                                      <option value="0">0</option>
+                                      <option value="100">100</option>
+                                      <option value="500">500</option>
+                                      <option value="1000">1000</option>
+                                      <option value="2000">2000</option>
+                                      <option value="5000">5000</option>
+                                      <option value="10000">10000</option>
+                                      <option value="20000">20000</option>
+                                      <option value="30000">30000</option>
+                                      <option value="40000">40000</option>
+                                      <option value="50000">50000</option>
+                                    </select>
+                                    <div *ngIf="RegisteredJobList.controls['salary_range_minimum'].touched && !RegisteredJobList.controls['salary_range_minimum'].valid" class="has-error">
+                                      <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['salary_range_minimum'].hasError('required')">  Please Select Minimum Salary </small></div>
+                                    </div>
+                                    <!--- end --->
+
+
+                                    <!---- salary type -->
+                                    <div class="form-group col-md-4 salary_range_maximum">                                  
+                                      <select formControlName="salary_range_maximum" name="Job_type" class="form-control">
+                                        <option value="">Salary Maximum</option>
+                                        <option value="0">0</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                        <option value="2000">2000</option>
+                                        <option value="5000">5000</option>
+                                        <option value="10000">10000</option>
+                                        <option value="20000">20000</option>
+                                        <option value="30000">30000</option>
+                                        <option value="40000">40000</option>
+                                        <option value="50000">50000</option>
+                                      </select>
+                                      <div *ngIf="RegisteredJobList.controls['Job_type'].touched && !RegisteredJobList.controls['Job_type'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['Job_type'].hasError('required')">  Please Select Maximum Salary</small></div>
+                                      </div>
+                                      <!--- end --->
+
+                                    </div>
+                                    
+                                    <!---- end salary range -->
+
+                                    <div class="form-group">
+                                       <div class="row">
+                                          <div class="col-md-3">
+                                             <label  style="padding-top: 8px;">Hide Salary : </label>
+                                          </div>
+                                          <div class="col-md-4">
+                                             <input type="checkbox" class="form-control" id="hide_salary"  name="hide_salary" formControlName="hide_salary">
+                                          </div>
+                                       </div>
+                                    </div>
+                                
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="steps step3">
+                                 <h4 class="steptitle">Step 4: Upload Company Logo ( Optional )</h4>
+                                 <div class="_upload">
+                                   
+                                       <div id='upload' class='text-center'>
+                                          <label for="fileupload" class="custom-file-upload">
+                                          <i class="fa fa-cloud-upload"></i> <img class="uploadicon" src="upload.png" style="max-width: 100%;">
+                                          </label>
+                                          <input type="file" id="fileupload" name="img" multiple>
+                                       </div>
+                                  
+                                   <!--  <center>
+                                       <div class='image'>
+                                       </div>
+                                    </center> -->
+                                 </div>
+                              </div>
+                           </div>
+
+                            <!-- <div class="col-md-6">
+                              <a  class="nextbttn" style="cursor: pointer;" (click)="Description()">Go to Description</a>
+                              <span class="require-field" style="color: red;display: none;">*** All Field is Required</span>
+                           </div> -->
+
+                        </div>
+                     </div>
+
+
+                     <div class="tab-pane p-3" id="two" role="tabpanel">
+                           <div class="row">
+                           <div class="col-md-8">
+                              <div class="steps step5">
+                                 <h4 class="steptitle">Step 5: Job Summary</h4>
+                                
+                                     <!--- Summary  -->
+                                    <div class="form-group">
+                                      <label>Job Summary</label>
+                                      <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"  class="form-control" id="job_summary" placeholder="Enter Job Summary" name="job_summary" formControlName="job_summary"></ckeditor>           
+                                      <div *ngIf="RegisteredJobList.controls['job_summary'].touched && !RegisteredJobList.controls['job_summary'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_summary'].hasError('required')">  Please Enter Job Summary</small></div>
+                                      </div>
+                                    <!--- end -->
+                                 
+                              </div>
+                           </div><br/>
+                           <div class="col-md-8">
+                              <div class="steps step6">
+                                 <h4 class="steptitle">Step 6: Job Description</h4>
+                                
+                                    <!--- description  -->
+                                    <div class="form-group">
+                                      <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"  class="form-control" id="job_description" placeholder="Enter Job Description" name="job_description" formControlName="job_description"></ckeditor>
+                                      <div *ngIf="RegisteredJobList.controls['job_description'].touched && !RegisteredJobList.controls['job_description'].valid" class="has-error">
+                                        <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['job_description'].hasError('required')">  Please Enter Job Description</small></div>
+                                      </div>
+                                    <!--- end -->
+
+                                     <div class="form-group">
+                                       <input type="checkbox" name=""> Role is applicable to recent graduate & entry level candidate
+                                    </div>
+                                 
+                              </div>
+                           </div>
+                            <div class="col-md-8">
+                              <div class="steps step7">
+                                 <h4 class="steptitle">Step 7: Where do you want your application to be sent?</h4>
+                               
+                                 <div class="form-group">
+                                  <input type="text" class="form-control" id="application_sent" placeholder="Enter Email Address" name="application_sent" formControlName="application_sent">
+                                  <div *ngIf="RegisteredJobList.controls['application_sent'].touched && !RegisteredJobList.controls['application_sent'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['application_sent'].hasError('required')">  Please Enter application to be sent</small></div>
+                                  </div>
+                                 
+                              </div>
+                           </div>
+                            <div class="col-md-6">
+                              <div class="steps step7">
+                                 <h4 class="steptitle">Step 8: Internal reference</h4>
+                                
+                                 <div class="form-group">
+                                  <input type="text" class="form-control" id="internal_refrence" placeholder="Internal refrence can help you keep track of your jobs." name="internal_refrence" formControlName="internal_refrence">
+                                  <div *ngIf="RegisteredJobList.controls['internal_refrence'].touched && !RegisteredJobList.controls['internal_refrence'].valid" class="has-error">
+                                    <small _ngcontent-c3="" class="form-control-feedback" *ngIf="RegisteredJobList.controls['internal_refrence'].hasError('required')">  Please Enter  Internal reference</small></div>
+                                  </div>
+                                 
+                              </div>
+                           </div>
+                           <div class="col-md-6">                              
+                               <button class="nextbttn Overviewbtn" type="button" [disabled]="RegisteredJobList.invalid" (click)="AddRegisterJob()">Submit</button>
+                           </div>
+                        </div>            
+                     </div>
+                                  
+                  </div>
+               </div>
+                </form>
+
+
+            </div>
+         </div>
+      </div>

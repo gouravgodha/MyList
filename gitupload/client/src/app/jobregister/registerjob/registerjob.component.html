@@ -1,0 +1,74 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content admin-area">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">               
+
+             <div class="row admin-head-title">
+                <div class="card-header">
+                    <p style="font-weight: bold;">Total Record: {{jobList.length}}</p>
+                </div>
+
+                <div class="card-header col-md-7">
+                    <input type="text" class="form-control" id="search_result" placeholder="Search Job by Job Title,Skill" name="search_result" (blur)="SearchResult($event)"  (keyup.enter)="SearchResult($event)" /> 
+                </div>
+
+                <div class="card-header col-md-2">
+                    <button class="btn btn-sm btn-info" type="button" [routerLink]="['/jobregister/add']">Add New Job</button> 
+                </div>
+            </div>
+                
+
+                <div class="card-body table-body-admin">
+                    <div class="table-responsive">
+                        <table class="table _xss">
+                            <thead class=" text-primary">
+
+                               <!--  <th>  ID </th> -->
+                                <th>Job</th>
+                                <th>Created Date</th> 
+
+                                <th> Days Left</th>
+                                <th>Type</th>
+                                <th>Candidates</th>
+
+                                <th class="text-center">Copy</th> 
+                                <th class="text-center">Expire</th>                                          
+                                <th class="text-center"> Action </th>
+
+                            </thead>
+                            <tbody class="admin-td" *ngFor="let registerjoblist of jobList; let idx = index;">
+                                <tr>
+                                	<!-- <td>{{idx+1}}  </td> -->
+                                	<td>
+                                     <h4>{{registerjoblist.job_title}}</h4>
+                                     <span class="ref-location">Ref: {{registerjoblist.internal_refrence}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Location: {{registerjoblist.job_location}}</span>
+                                    </td>
+                                    <td> {{registerjoblist.created_date}} </td>
+                                	
+                                   
+
+                                    <td style="padding-left: 35px;"> 20 </td>
+                                	<td> Free </td>
+                                	<td style="padding-left: 35px;"> {{registerjoblist.applied_jobs.length}} </td>
+
+
+                                	<td  (click)="DuplicateEntry(registerjoblist.id)"> <img style="width: 25px;" src="./assets/img/copy.png"/></td>
+
+                                    <td  (click)="Expire(registerjoblist.id)"> <img style="width: 25px;" src="./assets/img/close.png"/></td>
+
+                                    <td class="text-right">
+                                        
+                                        <a [routerLink]="['/jobregister/edit/'+registerjoblist.id]"><img style="width: 20px;" src="./assets/img/edit.png"/></a>  &nbsp;&nbsp; 
+                                       <!--  <button class="btn btn-sm btn-info" type="button" (click)="deleteJob(registerjoblist.id)">Delete</button> -->                  
+                                    </td>
+                                </tr>                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

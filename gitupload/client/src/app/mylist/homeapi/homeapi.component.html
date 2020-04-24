@@ -1,0 +1,54 @@
+<header class="header">
+	<div class="container">
+		<ul>
+			<li><a href="#">job Seekers</a></li>
+			<li><a href="#">Employers</a></li>
+		</ul>
+	</div>
+</header>
+<section class="middle-section">
+	<div class="container">
+		<div class="mainLogo">
+			<img src="../../../assets/img/web/myjoblist-logo.png" class="img-responsive">
+		</div>
+		<div class="searchBox">
+			 <form class="registration-form"  [formGroup]="searchForm" (submit)="SearchResult()">
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<div class="form-group">
+						<input type="text" class="form-control" formControlName="jobkeyword" name="" placeholder="Enter ob keywords">
+					</div>
+				</div>
+				<!-- <div class="col-md-4">
+					<div class="form-group">
+						<input type="text" class="form-control" name="" placeholder="Industry?">
+					</div>
+				</div> -->
+				<div class="col-md-6">
+					<div class="form-group searchInput_right">
+						<input type="text" class="form-control where" name="" formControlName="location" placeholder="Where?">
+						<div class="registration-form-box search search1">
+							<input type="submit" id="submit" name="send" class="submitBnt btn btn-primary btn-block"  value="">
+						</div>
+					</div>
+				</div>
+			
+
+			</div>
+			</form>
+			<div class="row cv-row">
+				<a href="#">+ Upload CV</a>
+			</div>
+			<div class="row signup-job">
+				<h4><a href="#">Sign Up</a> for job alerts and never miss a job opportunity !</h4>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="adBanner2">
+	<div class="container">
+		<img src="../../../assets/img/web/adver3.jpg" class="img-responsive">
+	</div>
+</section>

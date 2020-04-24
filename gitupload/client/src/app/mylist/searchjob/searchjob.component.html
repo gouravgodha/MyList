@@ -1,0 +1,137 @@
+ <app-header></app-header>
+ <div id="content">
+         <div class="menu-trigger"><img src="../../../assets/img/web/menuicon.png" class="img-responsive"></div>
+         <!-- Start Home -->
+          <!-- Start home -->
+         <!-- <section class="bg-half page-next-level">
+            <div class="bg-overlay"></div>
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-md-6">
+                     <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">Job List</h4>
+                        <ul class="page-next d-inline-block mb-0">
+                           <li><a href="index-2.html" class="text-uppercase font-weight-bold">Home</a></li>
+                           <li><a href="#" class="text-uppercase font-weight-bold">Jobs</a></li>
+                           <li>
+                              <span class="text-uppercase text-white font-weight-bold">Job Listing</span> 
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section> -->
+         <!-- end home -->
+         <!-- JOB LIST START -->
+         <section class="section">
+            <div class="container">
+               <!-- <div class="row justify-content-center">
+                  <div class="col-12">
+                     <div class="section-title text-center mb-4 pb-2">
+                        <h4 class="title title-line pb-5">Available job for you</h4>
+                        <p class="text-muted para-desc mx-auto mb-1">Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+                     </div>
+                  </div>
+               </div> -->
+               <div class="row">
+                 
+                  <div class="col-lg-12 mt-4 pt-2">
+                     <div class="row align-items-center">
+                        <div class="col-lg-12">
+                           <div class="show-results">
+                              <div class="float-left">
+                                 <h5 class="text-dark mb-0 pt-2 f-18">Showing results 0-20</h5>
+                              </div>
+                              <!-- <div class="sort-button float-right">
+                                 <select style="border: 1px solid
+                                    #ddd;
+                                    padding: 5px 15px;
+                                    border-radius: 5px;">
+                                    <option>Sorted By Date</option>
+                                    <option>Sorted By Relavance</option>
+                                 </select>
+                              </div> -->
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div class="row">
+
+                        <div class="col-lg-12 mt-4 pt-2 row job-list-box border rounded" *ngFor="let data of list">
+
+                           <div class="col-lg-8 mt-2 pt-2 nopadding">
+
+                              <div class="job-list-desc">
+                                 <h6 class="mb-2" style="color: #225586;font-weight: bold;"><a [href]="[data.url]"  style="color: #225586 !important;font-weight: bold;" target="_blank" class="text-dark">{{data.job_title}}</a></h6>
+                                 <p style="color: #4cacc6 !important;font-weight: bold;" *ngIf="data.company!=''" class="text-muted mb-0"><i class="mdi mdi-bank mr-2"></i>{{data.company}}</p>
+                                 <ul class="list-inline mb-0">
+                                    <li class="list-inline-item mr-3">          
+
+                                       <p [innerHTML]="data.job_description |  slice:0:500" ><i class="mdi mdi-map-marker mr-2"></i></p>
+
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+
+
+                        <div class="col-lg-4 mt-2 pt-2 nopadding">
+                          <p class="text-muted mb-0"><i class="mdi mdi-home mr-2"></i>{{data.location}}</p>
+                          <p class="text-muted mb-0"><i class="mdi mdi-timetable mr-2"></i>{{data.created_date}}</p>
+                          <p *ngIf="data.salary!=''"> <i class="mdi mdi-currency-usd mr-2"></i> <span  [innerHTML]="data.salary"> </span>  </p>
+                       </div>
+
+
+                          <!-- <div class="col-lg-2 mt-2 pt-2 nopadding">
+                            <p class="text-muted mb-0"><i class="mdi mdi-bank mr-2"></i>{{data.location}}</p>
+                          </div> -->
+                     </div>
+                       
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- JOB LIST START -->
+         <!-- subscribe start -->
+         <section class="section bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-4 col-md-5">
+                     <div class="float-left position-relative notification-icon mr-2">
+                        <i class="mdi mdi-bell-outline text-primary"></i>
+                        <span class="badge badge-pill badge-danger">1</span>
+                     </div>
+                     <h5 class="mt-2 mb-0">Your Job Notification</h5>
+                  </div>
+                  <div class="col-lg-8 col-md-7 mt-4 mt-sm-0">
+                    <!--  <form>
+                        <div class="form-group mb-0">
+                           <div class="input-group mb-0">
+                              <input name="email" id="email" type="email" class="form-control" placeholder="Your email :" required="" aria-describedby="newssubscribebtn">
+                              <div class="input-group-append">
+                                 <button class="btn btn-primary submitBnt" type="submit" id="newssubscribebtn">Subscribe</button>
+                              </div>
+                           </div>
+                        </div>
+                     </form> -->
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- subscribe end -->
+         <!-- end home -->
+         
+         
+        <app-footer-web></app-footer-web>
+      </div>
+      <!-- Back to top -->
+    <!--   <a href="#" class="back-to-top rounded text-center" id="back-to-top"> 
+      <i class="mdi mdi-chevron-up d-block"> </i> 
+      </a> -->
+      <!-- Back to top -->
+

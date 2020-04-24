@@ -1,0 +1,56 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Customer List</h4>
+                </div>
+
+                <div class="card-header">
+                    <button class="btn btn-sm btn-info" type="button" [routerLink]="['/customer/add']">Add New Customer</button> 
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th> Customer ID </th>
+                                <th> Last Name </th>
+                                <th> First Name </th>
+                                <th> Email </th>
+                                <th> Phone Number </th>
+                                <th> Policy Number </th>
+                                <th> State </th>
+                                <th> Address 1 </th>
+                                <th> City </th>
+                                <th> Status </th>                                
+                                <th class="text-right"> Action </th>
+                            </thead>
+                            <tbody *ngFor="let customer of customerList">
+                                <tr>
+                                    <td> {{customer.customer_id}} </td>
+                                    <td> {{customer.customer_last_name}} </td>
+                                    <td> {{customer.customer_first_name}} </td>
+                                    <td> {{customer.customer_email}} </td>
+                                    <td> {{customer.customer_phone}} </td>
+                                    <td> {{customer.customer_policy_number}} </td>
+                                    <td> {{customer.customer_state}} </td>
+                                    <td> {{customer.customer_address}} </td>
+                                    <td> {{customer.customer_city}} </td>                                    
+                                    <td> {{customer.customer_status}} </td>                                    
+                                    <td class="text-right">
+                                        <button class="btn btn-sm btn-info" type="button" [routerLink]="['/customer/edit/'+customer.customer_id]">Edit</button>  &nbsp;&nbsp; 
+                                        <button class="btn btn-sm btn-info" type="button" [routerLink]="['/customerinfo/'+customer.customer_id]">View</button>  &nbsp;&nbsp; 
+                                        <button class="btn btn-sm btn-info" type="button" (click)="deleteCustomer(customer.customer_id)">Delete</button>                  
+                                    </td>
+                                </tr>                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

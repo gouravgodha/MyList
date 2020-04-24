@@ -1,0 +1,221 @@
+
+<style type="text/css">
+      .dashboardSidebar ul{
+      margin-top: 10px !important;
+     }
+</style>
+
+<div class="panel-header panel-header-sm">
+     <app-header></app-header>
+     <div id="content">
+      <div class="menu-trigger"><img src="../../../assets/img/web/menuicon.png" class="img-responsive"></div>
+  </div>
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-lg-12">
+          
+            <div class="card user-dashboard dashboardweb">
+
+                
+                <div class="card-body custom-form">
+                     <h3 class="mainTitle">General Information</h3>
+                    <form [formGroup]="employeeEditFrom">
+                      
+                        <div class="row">
+                        	<div class="col-md-4">
+                        		<div class="form-group">
+                        			<label class="text-muted">First Name</label>
+                        			<input type="text" class="form-control" id="emp_firstname" placeholder="Enter First Name" name="emp_firstname" formControlName="emp_firstname">
+                        			<div *ngIf="employeeEditFrom.controls['emp_firstname'].touched && !employeeEditFrom.controls['emp_firstname'].valid" class="has-error">
+                        				<small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['emp_firstname'].hasError('required')">  Please Enter First Name</small></div>
+                        			</div>
+                        		</div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Last Name</label>
+                                    <input type="text" class="form-control" id="emp_lastname" placeholder="Enter Last Name" name="emp_lastname" formControlName="emp_lastname">
+                                    <div *ngIf="employeeEditFrom.controls['emp_lastname'].touched && !employeeEditFrom.controls['emp_lastname'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['emp_lastname'].hasError('required')">  Please Enter Last Name</small></div>
+                                </div>
+                            </div>                            
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Email</label>
+                                    <input type="text" class="form-control" id="emp_email" placeholder="Enter Email Address" name="emp_email" formControlName="emp_email">
+                                  <!--   <div *ngIf="employeeEditFrom.controls['customer_email'].touched && !employeeEditFrom.controls['customer_email'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['customer_email'].hasError('required')">  Please Enter Email</small></div> -->
+
+               <span  *ngIf="employeeEditFrom.hasError('email', 'emp_email')" style="color:red;">
+                  Please enter the correct email or valid email.
+              </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Phone Number</label>
+                                    <input type="text" class="form-control" id="phone_number" placeholder="Enter Phone Number" name="phone_number" formControlName="phone_number">
+                                    <div *ngIf="employeeEditFrom.controls['phone_number'].touched && !employeeEditFrom.controls['phone_number'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['phone_number'].hasError('required')">  Please Enter Phone Number</small></div>
+                                </div>
+                            </div>
+
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Job Title</label>
+                                    <input type="text" class="form-control" id="emp_job_title" placeholder="Enter Job title" name="emp_job_title" formControlName="emp_job_title">
+                                    <div *ngIf="employeeEditFrom.controls['emp_job_title'].touched && !employeeEditFrom.controls['emp_job_title'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['emp_job_title'].hasError('required')">  Please Enter Job title</small></div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Company Name</label>
+                                    <input type="text" class="form-control" id="company_name" placeholder="Enter Company Name" name="company_name" formControlName="company_name">
+                                    <div *ngIf="employeeEditFrom.controls['company_name'].touched && !employeeEditFrom.controls['company_name'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['company_name'].hasError('required')">  Please Enter Company Name</small></div>
+                                </div>
+                            </div>
+
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Job Started Month</label>
+                                    <input type="text" class="form-control" id="job_started_month" placeholder="Enter Phone Job Started Month" name="job_started_month" formControlName="job_started_month">
+                                    <div *ngIf="employeeEditFrom.controls['job_started_month'].touched && !employeeEditFrom.controls['job_started_month'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['job_started_month'].hasError('required')">  Please Enter Job Started Month</small></div>
+                                </div>
+                            </div>
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Job Started Year</label>
+                                    <input type="text" class="form-control" id="job_started_year" placeholder="Enter Phone Job Started Year" name="job_started_year" formControlName="job_started_year">
+                                    <div *ngIf="employeeEditFrom.controls['job_started_year'].touched && !employeeEditFrom.controls['job_started_year'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['job_started_year'].hasError('required')">  Please Enter Job Started Year</small></div>
+                                </div>
+                            </div>
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Job End Month</label>
+                                    <input type="text" class="form-control" id="job_end_month" placeholder="Enter Phone Job Started Year" name="job_end_month" formControlName="job_end_month">
+                                    <div *ngIf="employeeEditFrom.controls['job_end_month'].touched && !employeeEditFrom.controls['job_end_month'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['job_end_month'].hasError('required')">  Please Enter Job End Month</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Job End Year</label>
+                                    <input type="text" class="form-control" id="job_end_year" placeholder="Enter Phone Job End Year" name="job_end_year" formControlName="job_end_year">
+                                    <div *ngIf="employeeEditFrom.controls['job_end_year'].touched && !employeeEditFrom.controls['job_end_year'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['job_end_year'].hasError('required')">  Please Enter Job End Year</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Home Location</label>
+                                    <input type="text" class="form-control" id="home_location" placeholder="Enter Home Location" name="home_location" formControlName="home_location">
+                                    <div *ngIf="employeeEditFrom.controls['home_location'].touched && !employeeEditFrom.controls['home_location'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['home_location'].hasError('required')">  Please Enter Home Location</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Preferred Qualification</label>
+                                    <input type="text" class="form-control" id="preferred_classification" placeholder="Please Enter Qualification" name="preferred_classification" formControlName="preferred_classification">
+                                    <div *ngIf="employeeEditFrom.controls['preferred_classification'].touched && !employeeEditFrom.controls['preferred_classification'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['preferred_classification'].hasError('required')">  Please Enter Preferred Qualification</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Sub Qualification</label>
+                                    <input type="text" class="form-control" id="sub_classification" placeholder="Please Enter Sub Qualification" name="sub_classification" formControlName="sub_classification">
+                                    <div *ngIf="employeeEditFrom.controls['sub_classification'].touched && !employeeEditFrom.controls['sub_classification'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['sub_classification'].hasError('required')">  Please Enter Sub Qualification</small></div>
+                                </div>
+                            </div>
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Cover Letter</label>
+                                    <input type="text" class="form-control" id="cover_letter" placeholder="Please Enter Cover Letter" name="cover_letter" formControlName="cover_letter">
+                                    <div *ngIf="employeeEditFrom.controls['cover_letter'].touched && !employeeEditFrom.controls['cover_letter'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['cover_letter'].hasError('required')">  Please Enter Cover Letter</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Skill Set</label>
+                                    <input type="text" class="form-control" id="skill_set" placeholder="Please Enter Skill Set" name="skill_set" formControlName="skill_set">
+                                    <div *ngIf="employeeEditFrom.controls['skill_set'].touched && !employeeEditFrom.controls['skill_set'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['skill_set'].hasError('required')">  Please Enter Skill Set</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Annual Salary</label>
+                                    <input type="text" class="form-control" id="annual_salary" placeholder="Please Enter Annual Salary" name="annual_salary" formControlName="annual_salary">
+                                    <div *ngIf="employeeEditFrom.controls['annual_salary'].touched && !employeeEditFrom.controls['annual_salary'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['annual_salary'].hasError('required')">  Please Enter Annual Salary</small></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="text-muted">Year of Experience</label>
+                                    <input type="text" class="form-control" id="year_of_exp" placeholder="Please Enter Year Of Experience" name="year_of_exp" formControlName="year_of_exp">
+                                    <div *ngIf="employeeEditFrom.controls['year_of_exp'].touched && !employeeEditFrom.controls['year_of_exp'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="employeeEditFrom.controls['year_of_exp'].hasError('required')">  Please Enter Year Of Experience</small></div>
+                                </div>
+                            </div>
+
+
+                         
+
+
+                            <div class="col-md-4">
+                            	<div class="form-group">
+                            		<label class="text-muted" id="resum">Resume</label>
+
+                            		<input type="file" class="form-control" id="emp_resume" placeholder="Upload Resume" (change)="OnFileChange($event)" name="emp_resume" formControlName="emp_resume">
+                            		<div *ngIf="employeeEditFrom.controls['emp_resume'].touched && !employeeEditFrom.controls['emp_resume'].valid" class="has-error">
+                            			<small _ngcontent-c3="" class="form-control-feedback">Resume is required. </small>
+                            		</div>
+                            	</div>
+                            </div>
+                            
+                           <!--  <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="row">
+                                        
+                                        <a target="_blank"  [href]="fileUrl" (click)="viewDocument(customer_data.docFilePath)" class="simple-text logo-mini">View Document</a>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-sm btn-info" type="button" [disabled]="employeeEditFrom.invalid" (click)="updateEmployee()">Update</button>
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+      
+        </div>
+    </div>
+</div>
+
+ <app-footer-web></app-footer-web>

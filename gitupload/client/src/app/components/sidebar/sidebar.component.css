@@ -1,0 +1,131 @@
+.logo{
+	background-color: transparent;
+}
+.logo img{
+	width: 100%
+}
+.logo-img
+{
+	width: auto;
+	height: auto;
+	position: relative;
+}
+.simple-text.logo-mini
+{
+    position: fixed;
+    margin: 0px !important;
+    z-index: 11111;
+    width: 170px !important;
+    left: 36px;
+    right: 0;
+    bottom: 10px;
+
+}
+.sidebar-wrapper
+{
+	height: auto !important;
+    padding-bottom: 0;
+}
+.nav-item.active a
+{
+	box-shadow: none;
+}
+.nav-item a
+{
+	border-radius: 0;
+}
+.topTitle
+{
+    background-color: #1E4477;
+    height: 40px;
+    position: relative;
+    float: left;
+    z-index: 11111;
+    width: 100%;
+    min-height: 62px;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex: 2;
+    padding: 0 10px;
+}
+.topTitle .clientName{
+    width: 80%;
+}
+.topTitle a
+{
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+.topTitle .clientName > a {
+    text-align: left;
+    line-height: 18px;
+}
+.topTitle
+{
+    
+}
+.sidebar-wrapper ul.nav .nav-item.active
+{
+    /*border-left: 4px solid #1e87f0;*/
+}
+.sidebar-wrapper ul.nav .nav-item.active a
+{
+    color: #fce411 !important;
+}
+.sidebar-wrapper ul.nav .nav-item.active a i
+{
+    color: #fce411 !important;
+}
+.sidebar-wrapper ul.nav .nav-item.active a
+{
+    /*border-bottom: 1px solid #f4f4f4;*/
+
+}
+.sidebar-wrapper ul.nav .nav-item a
+{
+    position: relative;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.sidebar-wrapper ul.nav .nav-item a:after
+{
+    content: "\ea3b";
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    font-family: 'Nucleo Outline';
+    transform: translateY(-50%);
+    font-size: 8px;
+
+}
+.sidebar .nav li > a, .off-canvas-sidebar .nav li > a{
+    padding: 6px 8px !important;
+}
+
+a:hover{
+    text-decoration: none;
+}
+.menuicon
+{
+    float: right;
+    width: 20%;
+}
+.menuicon img{
+    width: 30px;
+    float: right;
+}
+
+.sidebar .nav li.active > a, .sidebar .nav li.active-pro > a, .off-canvas-sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active-pro > a{
+background-color: green !important;    
+
+}
+
+.table tbody+tbody {
+    border-top: 1px solid #dee2e6 !important;
+}

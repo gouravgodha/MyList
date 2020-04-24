@@ -1,0 +1,141 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Edit Customer</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="customerEditForm">
+                        <div class="row">
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" id="customer_first_name" placeholder="Enter First Name" name="customer_first_name" formControlName="customer_first_name">
+                                    <div *ngIf="customerEditForm.controls['customer_first_name'].touched && !customerEditForm.controls['customer_first_name'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_first_name'].hasError('required')">  Please Enter First Name</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" id="customer_last_name" placeholder="Enter Last Name" name="customer_last_name" formControlName="customer_last_name">
+                                    <div *ngIf="customerEditForm.controls['customer_last_name'].touched && !customerEditForm.controls['customer_last_name'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_last_name'].hasError('required')">  Please Enter Last Name</small></div>
+                                </div>
+                            </div>                            
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" id="customer_email" placeholder="Enter Email Address" name="customer_email" formControlName="customer_email">
+                                  <!--   <div *ngIf="customerEditForm.controls['customer_email'].touched && !customerEditForm.controls['customer_email'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_email'].hasError('required')">  Please Enter Email</small></div> -->
+
+               <span  *ngIf="customerEditForm.hasError('email', 'customer_email')" style="color:red;">
+                  Please enter the correct email or valid email.
+              </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" id="customer_phone" placeholder="Enter Phone Number" name="customer_phone" formControlName="customer_phone">
+                                    <div *ngIf="customerEditForm.controls['customer_phone'].touched && !customerEditForm.controls['customer_phone'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_phone'].hasError('required')">  Please Enter Phone Number</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 px-1">
+                                <div class="form-group">
+                                    <label>Form Type</label>
+                                    <select formControlName="customer_form_id" name="customer_form_id" class="form-control">
+                                        <option value="">Select Form Type</option>
+                                        <option *ngFor="let form of formTypeList"  [disabled]="form.form_status=='Inactive'" value="{{form.form_id}}"> {{form.form_title}}</option>
+                                    </select>
+                                    <div *ngIf="customerEditForm.controls['customer_form_id'].touched && !customerEditForm.controls['customer_form_id'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_form_id'].hasError('required')">  Please Select  Form Type</small></div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Document</label>                
+                                    <input type="file" class="form-control" id="customer_document_filename" placeholder="Document to be signed" (change)="OnFileChange($event)" name="file" formControlName="customer_document_filename">
+                                    <div *ngIf="customerEditForm.controls['customer_document_filename'].touched && !customerEditForm.controls['customer_document_filename'].valid" class="has-danger">
+                                        <small _ngcontent-c3="" class="form-control-feedback">The Document is required. </small>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Policy Number</label>
+                                    <input type="text" class="form-control" id="customer_policy_number" placeholder="Enter Policy Number" name="customer_policy_number" formControlName="customer_policy_number">
+                                    <div *ngIf="customerEditForm.controls['customer_policy_number'].touched && !customerEditForm.controls['customer_policy_number'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_policy_number'].hasError('required')">  Enter Policy Number</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" id="customer_country" placeholder="Enter Country Of Residence" name="customer_country" formControlName="customer_country">
+                                    <div *ngIf="customerEditForm.controls['customer_country'].touched && !customerEditForm.controls['customer_country'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_country'].hasError('required')">  Please 
+              Enter Country</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" id="customer_state" placeholder="Enter State of Residence" name="customer_state" formControlName="customer_state">
+                                    <div *ngIf="customerEditForm.controls['customer_state'].touched && !customerEditForm.controls['customer_state'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_state'].hasError('required')">  Please Enter State</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" id="customer_city" placeholder="Enter City of Residence" name="customer_city" formControlName="customer_city">
+                                    <div *ngIf="customerEditForm.controls['customer_city'].touched && !customerEditForm.controls['customer_city'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_city'].hasError('required')">  Please Enter City</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="textarea" class="form-control" id="customer_address" placeholder="Enter Address" name="customer_address" formControlName="customer_address">
+                                    <div *ngIf="customerEditForm.controls['customer_address'].touched && !customerEditForm.controls['customer_address'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_address'].hasError('required')">  Please Enter Address</small></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select class="form-control" name="customer_status" formControlName="customer_status">
+                                        <option value="">Select Status</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Deactive">Deactive</option>
+                                    </select>
+                                    <div *ngIf="customerEditForm.controls['customer_status'].touched && !customerEditForm.controls['customer_status'].valid" class="has-error">
+              <small _ngcontent-c3="" class="form-control-feedback" *ngIf="customerEditForm.controls['customer_status'].hasError('required')">  Please Select Status</small></div>
+                                </div>
+                            </div>
+                            
+                           <!--  <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <div class="row">
+                                        
+                                        <a target="_blank"  [href]="fileUrl" (click)="viewDocument(customer_data.docFilePath)" class="simple-text logo-mini">View Document</a>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-sm btn-info" type="button" [disabled]="customerEditForm.invalid" (click)="updateCustomer()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

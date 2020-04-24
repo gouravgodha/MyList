@@ -1,0 +1,117 @@
+<!-- <div id="preloader">
+         <div id="status">
+            <div class="spinner">
+               <div class="double-bounce1"></div>
+               <div class="double-bounce2"></div>
+            </div>
+         </div>
+      </div> -->
+      <!-- Loader -->
+      <!-- Navigation Bar-->
+      <header id="topnav" class="defaultscroll scroll-active">
+         <!-- Menu Start -->
+         <div class="container">
+            <div class="row">
+               <!-- Logo container-->
+               <div class="col-lg-1"></div>
+               <div class="col-lg-2">
+                  <a routerLink="/mylist" class="logo">
+                  <img src="../../../assets/img/web/logo-light.png" alt="" class="logo-light" height="18" />
+                 
+                  </a>
+               </div>
+               <div class="home-form-position col-lg-9">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="home-registration-form">
+                           <form class="registration-form"  [formGroup]="searchForm" (submit)="SearchResult()">
+                              <div class="row">
+                                 <div class="col-lg-2 col-md-6"></div>
+                                 
+                                 <div class="col-lg-3 col-md-6">
+                                    <div class="registration-form-box">
+                                       <i class="fa fa-briefcase"></i>
+                                       <input type="text" id="exampleInputName1" class="form-control rounded registration-input-box" formControlName="jobkeyword" placeholder="Job keybords...">
+                                    </div>
+                                 </div>
+
+                                 <div class="col-lg-3 col-md-6">
+                                    <div class="registration-form-box">
+                                       <i class="fa fa-location-arrow"></i>
+                                       <select id="select-country" class="demo-default rounded"  formControlName="location">
+                                          <option value="">Location</option>
+                                          <option value="AF">Afghanistan</option>
+                                          <option value="AX">&Aring;land Islands</option>
+                                          <option value="AL">Albania</option>
+                                       </select>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-lg-3 col-md-6">
+                                    <div class="registration-form-box">
+                                       <i class="fa fa-list-alt"></i>
+                                       <select id="select-category" class="demo-default rounded" formControlName="skill">
+                                          <option value="">Categories...</option>
+                                          <option value="4">Accounting</option>
+                                          <option value="1">IT & Software</option>
+                                          <option value="3">Marketing</option>
+                                          <option value="5">Banking</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-1 col-md-1">
+                                    <div class="registration-form-box search">
+                                       <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary btn-block" value=""  />
+                                       <i class="fa fa-search"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--end container-->
+         <!-- partial:index.partial.html -->
+         <!-- Navigation -->
+         <nav id="slide-menu" class="dashboardSidebar">
+
+
+             <div class="user-dashboard_wrap " *ngIf="check_login_status=='registered'">
+                  <div class="row">
+                     <!-- <div class="userprofile col-lg-4">
+                        <img src="images/employers/img-1.jpg" class="img-fluid d-block mx-auto rounded-pill" alt="">
+                     </div> -->
+                     <div class="_titlexs col-lg-12">
+                        <h3>Welcome, John Deo</h3>
+                        <p>Web Designer</p>
+                        <a href="dashboard.html" class="viewProfile"><i class="fas fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+
+            <ul>
+               <!-- <li class="timeline">Timeline</li> -->
+               <div *ngIf="check_login_status!='registered'; else elseBlock">
+                  <li class="events"><label class="modal-btn" for="modal-toggle-login"> Login</label></li>
+                  <li class="events"><label class="modal-btn" for="modal-toggle">Registration</label></li>
+               </div>
+               <li class="calendar"><a href="javascript:void(0);" style="cursor: pointer;">Employer Site</a></li>
+               <ng-template #elseBlock>
+                  <li class="events"><a class="modal-btn"><i class="fas fa-archive"></i> Dashboard</a></li>
+                  <li class=""><a href="#"><i class="fas fa-archive"></i>Saved Jobs</a></li>
+               <li class=""><a href="appliedjobs.html"><i class="fas fa-star"></i>Applied Jobs</a></li>
+
+                  <li class="events"><a class="modal-btn" (click)="Logout()"><i class="fas fa-archive"></i>Logout</a></li>
+
+               </ng-template>
+               <!-- <li class="sep settings">Settings</li> -->
+               <!-- <li class="logout">Logout</li> -->
+            </ul>
+         </nav>
+         <!--end end-->
+      </header>
+      <!--end header-->
+      <!-- Navbar End -->

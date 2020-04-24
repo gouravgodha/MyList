@@ -1,0 +1,48 @@
+.navbar 
+{
+    background-color: #f7f7f7 !important;
+    box-shadow: none;
+}
+.navbar  a.navbar-brand
+{
+	color: #262626;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.navbar a:not(.btn):not(.dropdown-item) {
+
+    color: #262626 !important;
+
+}
+.navbar input
+{
+	color: #262626;
+	background-color: #b2b2b2 !important;
+}
+.input-group-text
+{
+	background-color: #b2b2b2 !important;
+}
+.navSidebar
+{
+	/*display: none !important;*/
+}
+ .navbar .navbar-toggler-bar {
+    background: #060606;
+}
+/*.navbar .navbar-toggle , .navbar-toggler
+{
+	display: block !important;
+}
+.navbar .navbar-toggler-bar {
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 1px;
+    border-radius: 1px;
+    background: #000;
+}
+.navbar .navbar-toggler-bar + .navbar-toggler-bar {
+    margin-top: 7px;
+} */

@@ -1,0 +1,192 @@
+<div class="main-content">
+    <div class="row">
+        <div class="mainLogo">
+            <div class="logo">
+    <a [routerLink]="'/'" class="simple-text logo-mini">
+      <div class="logo-img">
+          <img src="./assets/img/eviden.png"/>
+      </div>
+    </a>
+   <!--  <a href="#" class="simple-text logo-normal">
+        Eviden
+    </a> -->
+</div>
+
+        </div>
+        <div class="col-md-12 _form">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="title">Hey {{customer_data.customer_first_name}}, </h6>
+                     <span>Please check your policy information in the below form and process for futher action. </span>
+
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="customerEditForm" class="_signForm">
+                        <div class="row">
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_first_name" placeholder="Customer's First Name" name="customer_first_name" formControlName="customer_first_name">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_last_name" placeholder="Customer's Last Name" name="customer_last_name" formControlName="customer_last_name">
+                                </div>
+                            </div>                            
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_email" placeholder="Customer's Email Address" name="customer_email" formControlName="customer_email">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_phone" placeholder="Customer's Phone Number" name="customer_phone" formControlName="customer_phone">
+                                </div>
+                            </div>
+                           
+                            <!-- <div class="col-md-6 px-1">
+                                <div class="form-group">
+                                    <label>Form Type</label>
+                                    <select formControlName="customer_form_id" name="customer_form_id" class="form-control">
+                                        <option value="">Please Select the Form Type</option>
+                                        <option *ngFor="let form of formTypeList" value="{{form.form_id}}"> {{form.form_title}}</option>
+                                    </select>
+                                </div>
+                            </div> -->
+
+
+                            <!-- <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Document</label>                
+                                    <input type="file" class="form-control" id="customer_document_filename" placeholder="Document to be signed" (change)="OnFileChange($event)" name="file" formControlName="customer_document_filename">
+                                    <div *ngIf="customerEditForm.controls['customer_document_filename'].touched && !customerEditForm.controls['customer_document_filename'].valid" class="has-danger">
+                                        <small _ngcontent-c3="" class="form-control-feedback">The Document is required. </small>
+                                    </div>
+                                </div>
+                            </div> -->
+                           
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Policy Number</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_policy_number" placeholder="Customer's Policy Number" name="customer_policy_number" formControlName="customer_policy_number">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_country" placeholder="Customer's Country Of Residence" name="customer_country" formControlName="customer_country">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_state" placeholder="Customer's State of Residence" name="customer_state" formControlName="customer_state">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" [readonly]="true" class="form-control" id="customer_city" placeholder="Customer's City of Residence" name="customer_city" formControlName="customer_city">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="textarea" [readonly]="true" class="form-control" id="customer_address" placeholder="Customer's Address" name="customer_address" formControlName="customer_address">
+                                </div>
+                            </div>
+
+
+
+                             <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Policy / Form Statement</label>
+                                    <input type="textarea" [readonly]="true" class="form-control" id="form_statement" placeholder="Policy Statement" name="form_statement" formControlName="form_statement">
+                                </div>
+                            </div>
+
+
+                          <!--   <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select class="form-control" name="customer_status" formControlName="customer_status">
+                                        <option value="">Please Select Status</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                            </div> -->
+
+
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group _downloadPolicy">
+                                   
+                                        <!-- <button class="btn btn-sm btn-success" type="button" (click)="viewDocument()">View document</button> -->
+
+                                         <label class="_bttnHover" (click)="downloadp()">Download Policy</label>
+                                      <!--   <a  target="_blank" [href]="viewDocument(customer_data.docFilePath)" class="_bttnHover simple-text logo-mini">View Document</a> -->
+                                    
+                                </div>
+                            </div>
+
+
+                        </div>
+                          <div class="row">
+                        <div class="bottom-div">
+                          
+                            <div class="form-group ">
+                                <h4>Signature</h4>
+                                <div class="_signaturePad">
+                                <div class="digitalSignature">
+
+                                    <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                                <button class="_bttn-info btn btn-sm btn-info _bttnHover" type="button" (click)="drawfinish()">Clear Signature</button>
+                                <button class="_bttn-info btn btn-sm btn-info _bttnHover" type="button" (click)="drawundo()">Undo</button>
+                                <button  style="display: none !important;" class="_bttn-info btn btn-sm uploadsignature btn-info _bttnHove" type="button" (click)="uploadSignature()">Upload Signature111</button>  
+                                </div>
+                            </div>
+                                <div class="_video">
+                                    <div class="pl-1 _startVideo">
+                                <div class="form-group">
+                                    <label>I Am Ready To Start Recording</label><br/>
+                                    <button class="_bttn-info btn btn-sm btn-info _bttnHove" type="button" (click)="startrecording()">Start Recording</button>
+                                </div>
+                            </div>
+                                </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- this is video code -->
+                         <div class="row statements">
+                                <div style="width: 100%">
+                                    <label>Policy / Form Statement</label>
+                                    <input type="textarea" [readonly]="true" class="form-control" id="form_statement" placeholder="Policy Statement" name="form_statement" formControlName="form_statement">
+                                </div>
+                            </div>
+
+                        <div class="start-video" *ngIf="video_recording==true">
+                           <app-video-capture></app-video-capture>
+                       </div>
+                        <!-- end -->
+                        
+                        <div class="row">
+                            <button class="btn btn-sm btn-info _bttnHover _bttn-info _submitBtn" type="button" [disabled]="customerEditForm.invalid" (click)="updatecustomerdata()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

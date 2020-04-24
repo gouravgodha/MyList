@@ -1,0 +1,127 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">User List</h4>
+        </div>
+
+       
+
+        <div class="card-header">
+          <button class="btn btn-sm btn-info" type="button" [routerLink]="['/user/add']">Add New User</button> 
+        </div>
+
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Id
+                </th>
+                <th>
+                 Comapny Name
+                </th>
+                <th>
+                User Role
+                </th>
+                <th>
+                 Job Title
+                </th>
+                <th>
+                First Name
+                </th>
+                <th>
+                Last Name
+                </th>
+                <th>
+                Email
+                </th>
+                <th>
+                 Phone Number
+                </th>                   
+                <th>
+                Status
+                </th>
+                <th>
+                Address
+                </th>
+                <th>
+                City
+                </th>
+                <th>
+                State
+                </th>
+                <th>
+                Country
+                </th>     
+                <th>
+                Created Date
+                </th>          
+                <th class="text-right">
+                 Action
+                </th>
+              </thead>
+              <tbody *ngFor="let data of userTypesList">
+                <tr>
+                  <td>
+                   {{data.user_id}}
+                  </td>
+                  <td>
+                   {{data.company_master.company_name}}
+                  </td>
+                   <td>
+                   {{data.user_roles_master.user_role}}
+                  </td>
+                  <td>
+                   {{data.user_job_title}}
+                  </td>
+                  <td>
+                   {{data.user_first_name}}
+                  </td>
+                  <td>
+                    {{data.user_last_name}}
+                  </td>
+                  <td>
+                    {{data.user_email}}
+                  </td>
+                  <td>
+                    {{data.user_phone_number}}
+                  </td>
+                  <td>
+                    {{data.user_status}}
+                  </td>
+                  <td>
+                    {{data.user_address}}
+                  </td>
+                  <td>
+                    {{data.user_city}}
+                  </td>
+                  <td>
+                    {{data.user_state}}
+                  </td>
+                  <td>
+                    {{data.user_country}}
+                  </td>
+                  <td>
+                    {{data.created_date  | date:'dd/MM/yyyy'}}
+                  </td>         
+
+                  
+                  <td class="text-right">
+                  <button class="btn btn-sm btn-info" type="button" [routerLink]="['/user/edit/'+data.user_id]" >Edit</button>  &nbsp;&nbsp; 
+                  <button class="btn btn-sm btn-info" type="button" (click)="DeleteUser(data.user_id)">Delete</button>                  
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>

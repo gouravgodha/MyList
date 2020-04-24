@@ -1,0 +1,43 @@
+<div class="topTitle">
+  <div class="clientName">
+    <a href="javascript:void(0)">
+        {{users.company_name}}
+    </a>
+  </div>
+  
+      <div class="menuicon">
+          <a href="javascript:void(0);"><img src="./assets/img/menu.png"/></a>
+      </div>
+   
+   <!--  <a href="#" class="simple-text logo-normal">
+        Eviden
+    </a> -->
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav">
+
+       <li class="nav-item newadd" style="background-color: #fce411;border: 1px solid #fce411;">
+            <a routerLink="/jobregister/add" style="color: #000;">
+                <i class="now-ui-icons files_paper"></i>
+                <p>Create New Job</p>
+            </a>
+        </li>
+
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a [routerLink]="[menuItem.path]">
+                <i class="now-ui-icons {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="logo">
+    <a  class="simple-text logo-mini">
+      <div class="logo-img">
+          <img  src="assets/img/eviden.png"/>
+      </div>
+    </a>
+   <!--  <a href="#" class="simple-text logo-normal">
+        Eviden
+    </a> -->
+</div>

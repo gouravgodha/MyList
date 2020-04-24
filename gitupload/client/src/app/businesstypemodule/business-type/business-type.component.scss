@@ -1,0 +1,25 @@
+.panel-header
+{
+	background: #f0f0f0;
+}
+.btn-info
+{
+	background-color:#0172bb;
+}
+
+.card{
+	box-shadow:none;
+	border:1px solid #ddd;
+}
+@media screen and (max-width:767px){
+	.businessType .card-header{
+		padding:10px;
+		text-align:center;
+	}
+	
+	.table thead th {
+	    border-bottom: none;
+	    white-space: nowrap;
+	}
+}
+

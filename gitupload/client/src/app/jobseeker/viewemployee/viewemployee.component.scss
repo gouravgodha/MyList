@@ -1,0 +1,38 @@
+
+._downloadPolicy label
+{
+	text-transform: uppercase;
+	font-size: 12px !important;
+	padding: 22px;
+	height: 40px;
+	border: 1px solid #000;
+	margin-right: 20px;
+	border-radius: 100px;
+	curser:pointer;
+	padding: 10px 20px;
+	transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+}
+._downloadPolicy a
+{
+	background: #1e4477;
+	height: 40px;
+	padding: 10px 20px;
+	display:inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+	border-radius: 32px;
+	transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+
+}
+._downloadPolicy
+{
+	margin-top:30px;
+}
+
+._bttnHover:hover{
+	background:#0e294e !important;
+	color:#fff !important;
+}

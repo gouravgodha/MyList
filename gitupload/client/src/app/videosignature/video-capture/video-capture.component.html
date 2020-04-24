@@ -1,0 +1,47 @@
+<!-- <div class="panel-header panel-header-sm">
+</div> -->
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">                                
+                <div class="card-body">
+                    <div class="row col-md-12">
+                        <div class="col-md-6">
+                            <video class="border" id="videoStream" playsinline autoplay muted #videoStream></video>
+                        </div>
+                        <div class="col-md-6">
+                            <video class="border" (ended)="videoPlaybackEnd()" id="recordedVideoStream" playsinline #recordedVideoStream></video>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12" *ngIf="recordingInProgress"> -->
+                        <div class="progress" *ngIf="recordingInProgress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="15" [attr.aria-valuenow]="maxVideoDuration" [style.width]="videoProgressBarWidthStr" style="font-weight: bold; text-align: center;">{{videoRecordingProgress}}%</div>
+                        </div>
+                    <!-- </div>                     -->
+                    <br>
+
+                    <!-- <input type="file" #expVideo accept="video/*" /> -->
+
+                    <div class="col-md-12">
+                        <button class="btn btn-sm btn-info" #enableCamera (click)="startCamera()">Start camera</button>
+                        <button class="btn btn-sm btn-danger" #recordVideo (click)="startRecording()" [disabled] = "disableRecording">{{recordButtonText}}</button>
+                        <button class="btn btn-sm btn-success" #playbackRecordedVideo (click)="playRecordedVideo()" [disabled] = "playButtonDisabled">Play</button>
+                        <button class="btn btn-sm" #downloadRecordedVideo (click)="downloadVideo()" [disabled] = "downloadButtonDisabled">Download</button>
+                        <button class="btn btn-sm btn-warning" (click)="uploadVideo()" [disabled] = "downloadButtonDisabled || videoUploadingInProgress">Upload</button>
+                        <!-- <button class="btn btn-lg btn-outline-primary" (click)="openModal()">Launch demo modal</button> -->
+                    </div>
+                
+                    <div class="col-md-12">
+                        <h4>Media Stream Constraints options</h4>
+                        <p>Echo cancellation: <input type="checkbox" #echoCancellation (change)="echoCancellationStatusChange($event)" [checked]="echoCancellationEnabled"></p>
+                    </div>
+                
+                    <!-- <div>
+                        <span id="errorMsg">{{errorMessage}}</span>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

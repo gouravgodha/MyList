@@ -1,0 +1,204 @@
+ <app-header></app-header>
+ <div id="content">
+         <div class="menu-trigger"><img src="../../../assets/img/web/menuicon.png" class="img-responsive"></div>
+        
+        
+    <!-- Start home -->
+    <section class="bg-half page-next-level"> 
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">Job Detail</h4>
+                        <ul class="page-next d-inline-block mb-0">
+                            <li><a href="index-2.html" class="text-uppercase font-weight-bold">Home</a></li>
+                            <li><a href="#" class="text-uppercase font-weight-bold">Jobs</a></li> 
+                            <li>
+                                <span class="text-uppercase text-white font-weight-bold">Job Detail</span> 
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end home -->
+
+    <!-- JOB DETAILS START -->
+    <section class="section jobDetails">
+        <div class="container">
+           
+
+            <div class="row">
+                <div class="col-lg-8 col-md-7">
+                    
+                  
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="show-results">
+                                <div class="float-left">
+                                    <h5 class="text-dark mb-0 pt-2 f-18">Showing results 0-20</h5>
+                                </div>
+                                <div class="sort-button float-right">
+                                    <select style="border: 1px solid #ddd;padding: 5px 15px;border-radius: 5px;">
+                                        <option>Sorted By Date</option>
+                                        <option>Sorted By Relavance</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-12 mt-4 pt-2"  *ngFor="let data of search_data">
+                            <div class="job-list-box border rounded">
+                                <div class="p-3">
+                                    <div class="row align-items-center">
+                                        
+                                        <div class="col-lg-9 col-md-9">
+                                            <div class="job-list-desc">
+                                                <h6 class="mb-2"><a [routerLink]="['/mylist/jobdetail/'+search_data_company.company_id]" class="text-dark">{{data.job_title}}</a></h6>
+                                                <p class="text-muted mb-0"><i class="mdi mdi-bank mr-2"></i>{{search_data_company.company_name}}</p>
+                                                <ul class="list-inline mb-0">
+                                                    <li class="list-inline-item mr-3">
+                                                        <p class="text-muted mb-0"><i class="mdi mdi-map-marker mr-2"></i>{{data.job_location}}</p>
+                                                    </li>
+
+                                                    <li class="list-inline-item">
+                                                        <p class="text-muted mb-0"><i class="mdi mdi-clock-outline mr-2"></i>{{data.created_date}}</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="job-list-button-sm text-right">
+                                                <span class="badge badge-success" style="margin-right:9px;"><i class="fa fa-star"></i>Save</span>
+
+                                                <div class="mt-3">
+                                                    <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                    </div> 
+
+                    
+                </div>
+
+                <div class="col-lg-4 col-md-5 mt-4 mt-sm-0">
+                    <div class="job-detail border rounded p-4">
+                       
+
+                        <div class="job-detail-location pt-4">
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-bank text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: Web pvt.Ltd</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-email text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: Webt@gmail.com</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-web text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: https://www.web.com</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-cellphone-iphone text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: 1987 6543 21</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-currency-usd text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: $700 - $800/month</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-security text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: 1 To 3 Years.</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-clock-outline text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: 4 minutes ago</p>
+                            </div>
+
+                            <h6 class="text-dark f-17 mt-3 mb-0">Share Job :</h6>
+                            <ul class="social-icon list-inline mt-3 mb-0">
+                                <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-google-plus"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-whatsapp"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                   
+
+                    <!-- <div class="job-detail apply mt-4">
+                        <a href="#" class="btn btn-primary btn-block">Apply For This Job</a>
+                        <a href="#" class="save"><i class="fa fa-star"></i>Save</a>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JOB DETAILS END -->
+
+    <!-- subscribe start -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="float-left position-relative notification-icon mr-2">
+                        <i class="mdi mdi-bell-outline text-primary"></i>
+                        <span class="badge badge-pill badge-danger">1</span>
+                    </div>
+                    <h5 class="mt-2 mb-0">Your Job Notification</h5>
+                </div>
+                <div class="col-lg-8 col-md-7 mt-4 mt-sm-0">
+                    <!-- <form> -->
+                        <div class="form-group mb-0">
+                            <div class="input-group mb-0">
+                                <input name="email" id="email" type="email" class="form-control" placeholder="Your email :" required="" aria-describedby="newssubscribebtn">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary submitBnt" type="submit" id="newssubscribebtn">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </section>
+         
+         
+        <app-footer-web></app-footer-web>
+      </div>
+    
+

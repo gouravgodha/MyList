@@ -1,0 +1,39 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">User Role List</h4>
+                </div>
+                <div class="card-header">
+                    <button class="btn btn-sm btn-info" type="button" [routerLink]="['/user-role/add']">Add New User Role</button> 
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th> Id </th>
+                                <th> User Role </th>
+                                <th> Created Date </th>
+                                <th class="text-right"> Action </th>
+                            </thead>
+                            <tbody *ngFor="let userRole of userRoleList">
+                                <tr>
+                                    <td> {{userRole.user_role_id}} </td>
+                                    <td> {{userRole.user_role}} </td>
+                                    <td> {{userRole.created_date | date:'dd/MM/yyyy'}} </td>
+                                    <td class="text-right">
+                                        <button class="btn btn-sm btn-info" type="button" [routerLink]="['/user-role/edit/'+userRole.user_role_id]" >Edit</button>&nbsp;
+                                        <button class="btn btn-sm btn-info" type="button" (click)="deleteUserRole(userRole.user_role_id)">Delete</button>                  
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
