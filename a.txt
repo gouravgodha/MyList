@@ -1,0 +1,29 @@
+database
+
+http://eviden.syscraft-pro.tk/phpmyadmin
+eviden
+6VC8VIerKKjp0pOq
+
+
+---------------------------------
+server
+
+syscraft-node
+ip: 13.235.189.220
+domain: https://eviden.syscraft-pro.tk/
+ftp node user
+username: sysnv1
+password: ScVe4f2a
+
+
+
+--------------------------------------
+ng build --prod --aot false --build-optimizer false
+ 
+
+
+node ./bin/www.js &
+ps -ef | grep www.js
+kill -9 'pid'
+pm2 start ./bin/www.js
+nodemon ./bin/www.js &
