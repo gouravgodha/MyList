@@ -32,7 +32,7 @@
     "angular2-carousel": "^1.0.17",
     "angular2-signaturepad": "^2.8.0",
     "bootstrap": "4.2.1",
-    "chart.js": "2.7.3",
+    "chart.js": "2.9.4",
     "chartist": "0.11.0",
     "classlist.js": "1.1.20150312",
     "copy-webpack-plugin": "4.6.0",
